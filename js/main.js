@@ -398,15 +398,16 @@
 
     function timeAgo(dateStr) {
         if (!dateStr) return '';
-        var diff = Date.now() - new Date(dateStr).getTime();
+        var d = new Date(dateStr);
+        var diff = Date.now() - d.getTime();
         var mins = Math.floor(diff / 60000);
         if (mins < 1) return 'Agora';
         if (mins < 60) return 'Há ' + mins + ' min';
         var hours = Math.floor(mins / 60);
         if (hours < 24) return 'Há ' + hours + 'h';
-        var days = Math.floor(hours / 24);
-        if (days < 30) return 'Há ' + days + 'd';
-        return new Date(dateStr).toLocaleDateString('pt-BR', { day: 'numeric', month: 'short' });
+        var dd = String(d.getDate()).padStart(2, '0');
+        var mm = String(d.getMonth() + 1).padStart(2, '0');
+        return dd + '/' + mm;
     }
 
     /* ====== LOAD IMPORTED NEWS INTO SITE ====== */
@@ -418,6 +419,11 @@
             // Only published / featured
             var published = news.filter(function(n) { return n.status === 'published' || n.status === 'featured'; });
             if (!published.length) return;
+
+            // Sort by date (newest first)
+            published.sort(function(a, b) {
+                return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
+            });
 
             var featured = published.filter(function(n) { return n.status === 'featured'; });
             var byCategory = {};
@@ -648,6 +654,8 @@
             if (relatedSection) {
                 var related = news.filter(function(n) {
                     return n.id !== articleId && (n.status === 'published' || n.status === 'featured');
+                }).sort(function(a, b) {
+                    return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
                 }).slice(0, 3);
 
                 if (related.length > 0) {
@@ -665,7 +673,7 @@
             // Update sidebar trending
             var trendingOl = document.querySelector('.trending');
             if (trendingOl) {
-                var trendingNews = news.filter(function(n) { return n.status === 'published' || n.status === 'featured'; }).slice(0, 5);
+                var trendingNews = news.filter(function(n) { return n.status === 'published' || n.status === 'featured'; }).sort(function(a, b) { return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime(); }).slice(0, 5);
                 if (trendingNews.length > 0) {
                     trendingOl.innerHTML = trendingNews.map(function(n, i) {
                         return '<li class="trending__item"><span class="trending__rank">' + (i + 1) + '</span><a href="' + articleUrl(n) + '" class="trending__link">' + escH(n.title) + '</a></li>';

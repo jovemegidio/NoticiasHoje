@@ -56,9 +56,10 @@ function generateArticleHTML(article, allNews) {
         `                        <a href="index.html#${cat}" class="article-tag">${escHtml(t)}</a>`
     ).join('\n');
 
-    // Related articles
+    // Related articles (newest first)
     const related = allNews
         .filter(n => n.id !== article.id && (n.status === 'published' || n.status === 'featured'))
+        .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
         .slice(0, 3);
 
     const relatedHtml = related.map(n => {
@@ -73,9 +74,10 @@ function generateArticleHTML(article, allNews) {
                             </article>`;
     }).join('\n');
 
-    // Trending sidebar
+    // Trending sidebar (newest first)
     const trending = allNews
         .filter(n => n.status === 'published' || n.status === 'featured')
+        .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime())
         .slice(0, 5);
 
     const trendingHtml = trending.map((n, i) => {
@@ -338,8 +340,9 @@ function main() {
         process.exit(1);
     }
 
-    // Filter published only
-    const published = news.filter(n => n.status === 'published' || n.status === 'featured');
+    // Filter published only and sort by date (newest first)
+    const published = news.filter(n => n.status === 'published' || n.status === 'featured')
+        .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
     if (published.length === 0) {
         console.error('\n❌ Nenhuma notícia publicada encontrada.');
         process.exit(1);
