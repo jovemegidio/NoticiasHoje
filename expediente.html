@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conheça a equipe do NotíciasHoje — nossos editores, repórteres e diretores responsáveis pelo conteúdo.">
+    <meta name="theme-color" content="#D32F2F">
+    <title>Expediente — NotíciasHoje</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left"><span class="topbar__date" id="currentDate"></span><span class="topbar__sep">|</span><span class="topbar__greeting" id="greeting"></span></div>
+            <div class="topbar__right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro"><i class="fas fa-moon"></i></button>
+                <a href="index.html"><i class="far fa-bell"></i> Alertas</a>
+                <a href="index.html"><i class="far fa-envelope"></i> Newsletter</a>
+                <a href="#"><i class="far fa-user"></i> Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="header__logo" aria-label="NotíciasHoje - Página inicial">
+                <div class="header__logo-mark"><span>NH</span></div>
+                <div class="header__logo-text"><strong>Notícias<span>Hoje</span></strong><small>Informação com credibilidade</small></div>
+            </a>
+            <div class="header__search" id="searchBar">
+                <form class="header__search-form" id="searchForm" role="search">
+                    <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off" aria-label="Campo de busca">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <button class="header__search-toggle" id="searchToggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="nav__list" id="navList" role="menubar">
+                <li role="none"><a href="index.html" class="nav__link" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="index.html#politica" class="nav__link" role="menuitem">Política</a></li>
+                <li role="none"><a href="index.html#economia" class="nav__link" role="menuitem">Economia</a></li>
+                <li role="none"><a href="index.html#tecnologia" class="nav__link" role="menuitem">Tecnologia</a></li>
+                <li role="none"><a href="index.html#saude" class="nav__link" role="menuitem">Saúde</a></li>
+                <li role="none"><a href="index.html#esportes" class="nav__link" role="menuitem">Esportes</a></li>
+                <li role="none"><a href="index.html#cultura" class="nav__link" role="menuitem">Cultura</a></li>
+                <li role="none"><a href="index.html#mundo" class="nav__link" role="menuitem">Mundo</a></li>
+                <li role="none"><a href="index.html#ciencia" class="nav__link" role="menuitem">Ciência</a></li>
+                <li role="none"><a href="index.html#opiniao" class="nav__link" role="menuitem">Opinião</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="main" id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Início</a><span class="breadcrumb__sep">›</span><span>Expediente</span>
+            </nav>
+
+            <div class="layout">
+                <div class="layout__main">
+                    <header class="article-header">
+                        <h1>Expediente</h1>
+                        <p class="article-subtitle">Conheça os profissionais responsáveis pelo conteúdo do NotíciasHoje.</p>
+                    </header>
+
+                    <div class="article-content">
+                        <h2>Direção</h2>
+                        <ul>
+                            <li><strong>Diretor-Presidente:</strong> Carlos Eduardo Mendes</li>
+                            <li><strong>Diretora de Jornalismo:</strong> Ana Paula Ribeiro</li>
+                            <li><strong>Diretor de Tecnologia:</strong> Rafael Takahashi</li>
+                            <li><strong>Diretora Comercial:</strong> Fernanda Lopes</li>
+                        </ul>
+
+                        <h2>Conselho Editorial</h2>
+                        <ul>
+                            <li>Roberto Campos — Análise Política</li>
+                            <li>Claudia Ramos — Economia & Mercado</li>
+                            <li>André Takahashi — Tecnologia & Futuro</li>
+                            <li>Prof. Dr. Marcos Aurélio — Ciência & Educação</li>
+                            <li>Dra. Luciana Ferreira — Saúde & Bem-estar</li>
+                        </ul>
+
+                        <h2>Editores</h2>
+                        <ul>
+                            <li><strong>Editor-chefe:</strong> João Paulo Martins</li>
+                            <li><strong>Editora de Política:</strong> Marina Santos</li>
+                            <li><strong>Editor de Economia:</strong> Ricardo Lima</li>
+                            <li><strong>Editora de Tecnologia:</strong> Patrícia Gomes</li>
+                            <li><strong>Editor de Esportes:</strong> Felipe Araújo</li>
+                            <li><strong>Editora de Cultura:</strong> Juliana Torres</li>
+                            <li><strong>Editor de Mundo:</strong> Marcos Oliveira</li>
+                            <li><strong>Editora de Ciência:</strong> Dra. Camila Andrade</li>
+                            <li><strong>Editor de Saúde:</strong> Dr. Marcos Silva</li>
+                            <li><strong>Editor de Vídeo:</strong> Bruno Ferreira</li>
+                            <li><strong>Editora de Redes Sociais:</strong> Larissa Souza</li>
+                        </ul>
+
+                        <h2>Redação</h2>
+                        <p>O NotíciasHoje conta com uma equipe de mais de <strong>200 jornalistas, repórteres, fotógrafos e cinegrafistas</strong> espalhados por todas as regiões do Brasil, além de correspondentes internacionais em Washington, Lisboa, Pequim e Buenos Aires.</p>
+
+                        <h2>Equipe Técnica</h2>
+                        <ul>
+                            <li><strong>Desenvolvimento Web:</strong> Equipe de Engenharia Digital</li>
+                            <li><strong>Design & UX:</strong> Estúdio de Criação NH</li>
+                            <li><strong>Infraestrutura:</strong> Equipe de Operações em Nuvem</li>
+                            <li><strong>Dados & Analytics:</strong> Laboratório de Dados NH</li>
+                        </ul>
+
+                        <h2>Informações Legais</h2>
+                        <p><strong>Razão Social:</strong> NotíciasHoje Comunicação Digital Ltda.</p>
+                        <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+                        <p><strong>Endereço:</strong> Av. Paulista, 1000 — 15º andar — Bela Vista, São Paulo — SP, CEP 01310-100</p>
+                        <p><strong>Telefone:</strong> (11) 3000-0000</p>
+                        <p><strong>E-mail:</strong> <a href="mailto:contato@noticiashoje.com.br" style="color:var(--brand)">contato@noticiashoje.com.br</a></p>
+                    </div>
+                </div>
+
+                <aside class="sidebar" aria-label="Páginas do portal">
+                    <div class="widget">
+                        <h3 class="widget__title"><i class="fas fa-building"></i> Portal</h3>
+                        <ul class="portal-nav">
+                            <li><a href="sobre.html" class="portal-nav__link"><i class="fas fa-info-circle"></i> Sobre o NH</a></li>
+                            <li><a href="expediente.html" class="portal-nav__link active"><i class="fas fa-users"></i> Expediente</a></li>
+                            <li><a href="privacidade.html" class="portal-nav__link"><i class="fas fa-shield-halved"></i> Política de Privacidade</a></li>
+                            <li><a href="termos.html" class="portal-nav__link"><i class="fas fa-file-contract"></i> Termos de Uso</a></li>
+                            <li><a href="etica.html" class="portal-nav__link"><i class="fas fa-scale-balanced"></i> Código de Ética</a></li>
+                            <li><a href="anuncie.html" class="portal-nav__link"><i class="fas fa-bullhorn"></i> Anuncie</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo"><div class="header__logo-mark"><span>NH</span></div><strong>Notícias<span>Hoje</span></strong></a>
+                    <p>Jornalismo sério, imparcial e comprometido com a verdade.</p>
+                    <div class="footer__social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a><a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col"><h4>Editorias</h4><ul><li><a href="index.html#politica">Política</a></li><li><a href="index.html#economia">Economia</a></li><li><a href="index.html#tecnologia">Tecnologia</a></li><li><a href="index.html#esportes">Esportes</a></li><li><a href="index.html#cultura">Cultura</a></li><li><a href="index.html#ciencia">Ciência</a></li><li><a href="index.html#saude">Saúde</a></li><li><a href="index.html#opiniao">Opinião</a></li></ul></div>
+                    <div class="footer__col"><h4>Portal</h4><ul><li><a href="sobre.html">Sobre o NH</a></li><li><a href="expediente.html">Expediente</a></li><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="etica.html">Código de Ética</a></li><li><a href="anuncie.html">Anuncie</a></li></ul></div>
+                    <div class="footer__col"><h4>Contato</h4><ul><li><a href="mailto:contato@noticiashoje.com.br"><i class="far fa-envelope"></i> contato@noticiashoje.com.br</a></li><li><a href="tel:+551130000000"><i class="fas fa-phone"></i> (11) 3000-0000</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer__bottom"><p>&copy; 2026 NotíciasHoje. Todos os direitos reservados.</p><div class="footer__badges"><span><i class="fas fa-shield-halved"></i> Site Seguro</span><span><i class="fas fa-check-circle"></i> Jornalismo Verificado</span></div></div>
+        </div>
+    </footer>
+    <button class="btt" id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies"><div class="cookie-banner__inner"><div class="cookie-banner__text"><i class="fas fa-cookie-bite"></i><p>Utilizamos cookies. <a href="privacidade.html">Política de Privacidade</a>.</p></div><div class="cookie-banner__actions"><button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceitar</button><button class="cookie-btn cookie-btn--reject" id="cookieReject">Rejeitar</button></div></div></div>
+    <script src="js/main.js"></script>
+</body>
+</html>

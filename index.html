@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NotíciasHoje — O portal de notícias mais completo do Brasil. Política, economia, tecnologia, esportes e mais.">
+    <meta name="theme-color" content="#D32F2F">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="NotíciasHoje">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://noticiashoje.com.br/">
+    <meta property="og:title" content="NotíciasHoje — Seu portal de notícias">
+    <meta property="og:description" content="As principais notícias do Brasil e do mundo em tempo real. Política, economia, tecnologia, esportes e mais.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=1200&h=630&fit=crop">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="NotíciasHoje">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NotíciasHoje — Seu portal de notícias">
+    <meta name="twitter:description" content="As principais notícias do Brasil e do mundo em tempo real.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1504711434969-e33886168d5c?w=1200&h=630&fit=crop">
+
+    <title>NotíciasHoje — Seu portal de notícias</title>
+
+    <!-- Favicon SVG -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Skip Navigation (Acessibilidade) -->
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- ====== TOPBAR ====== -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left">
+                <span class="topbar__date" id="currentDate"></span>
+                <span class="topbar__sep">|</span>
+                <span class="topbar__greeting" id="greeting"></span>
+            </div>
+            <div class="topbar__right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="#"><i class="far fa-bell"></i> Alertas</a>
+                <a href="#"><i class="far fa-envelope"></i> Newsletter</a>
+                <a href="#"><i class="far fa-user"></i> Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== HEADER ====== -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="index.html" class="header__logo" aria-label="NotíciasHoje - Página inicial">
+                <div class="header__logo-mark"><span>NH</span></div>
+                <div class="header__logo-text">
+                    <strong>Notícias<span>Hoje</span></strong>
+                    <small>Informação com credibilidade</small>
+                </div>
+            </a>
+            <div class="header__search" id="searchBar">
+                <form class="header__search-form" id="searchForm" role="search">
+                    <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off" aria-label="Campo de busca">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <button class="header__search-toggle" id="searchToggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====== AD LEADERBOARD ====== -->
+    <div class="ad-banner ad-banner--leaderboard">
+        <div class="container">
+            <div class="ad-placeholder"><span>Publicidade</span></div>
+        </div>
+    </div>
+
+    <!-- ====== NAV ====== -->
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="nav__list" id="navList" role="menubar">
+                <li role="none"><a href="#" class="nav__link active" data-section="home" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="#politica" class="nav__link" data-section="politica" role="menuitem">Política</a></li>
+                <li role="none"><a href="#economia" class="nav__link" data-section="economia" role="menuitem">Economia</a></li>
+                <li role="none"><a href="#tecnologia" class="nav__link" data-section="tecnologia" role="menuitem">Tecnologia</a></li>
+                <li role="none"><a href="#saude" class="nav__link" data-section="saude" role="menuitem">Saúde</a></li>
+                <li role="none"><a href="#esportes" class="nav__link" data-section="esportes" role="menuitem">Esportes</a></li>
+                <li role="none"><a href="#cultura" class="nav__link" data-section="cultura" role="menuitem">Cultura</a></li>
+                <li role="none"><a href="#mundo" class="nav__link" data-section="mundo" role="menuitem">Mundo</a></li>
+                <li role="none"><a href="#ciencia" class="nav__link" data-section="ciencia" role="menuitem">Ciência</a></li>
+                <li role="none"><a href="#opiniao" class="nav__link" data-section="opiniao" role="menuitem">Opinião</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ====== BREAKING NEWS ====== -->
+    <div class="breaking" id="breakingBar" aria-label="Notícias urgentes">
+        <div class="container breaking__inner">
+            <div class="breaking__badge"><i class="fas fa-bolt"></i> <span>URGENTE</span></div>
+            <div class="breaking__track">
+                <div class="breaking__content" id="breakingContent">
+                    <a href="noticia.html">Governo anuncia pacote de investimentos de R$ 120 bilhões em infraestrutura para os próximos 4 anos</a>
+                    <span class="breaking__sep">•</span>
+                    <a href="noticia.html">Seleção Brasileira é convocada para as eliminatórias da Copa do Mundo 2026</a>
+                    <span class="breaking__sep">•</span>
+                    <a href="noticia.html">Dólar fecha em queda e atinge menor valor em 6 meses: R$ 4,87</a>
+                    <span class="breaking__sep">•</span>
+                    <a href="noticia.html">Nova tecnologia brasileira de energia solar bate recorde mundial de eficiência</a>
+                    <span class="breaking__sep">•</span>
+                    <a href="noticia.html">Frente fria chega ao Sudeste e temperaturas devem cair até 10°C</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="main" id="main-content">
+        <div class="container">
+
+            <!-- ===== HERO ===== -->
+            <section class="hero" aria-label="Destaques principais">
+                <article class="hero__featured">
+                    <a href="noticia.html" class="hero__featured-link">
+                        <div class="hero__featured-img">
+                            <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&h=500&fit=crop&q=80" alt="Congresso Nacional em sessão de votação" loading="eager">
+                            <div class="hero__featured-overlay"></div>
+                        </div>
+                        <div class="hero__featured-body">
+                            <span class="tag tag--politics">Política</span>
+                            <h2>Congresso aprova reforma tributária histórica e promete simplificar impostos para 200 milhões de brasileiros</h2>
+                            <p>Mudança estrutural foi aprovada após 8 meses de negociação. Especialistas apontam impactos positivos para economia a partir de 2027.</p>
+                            <div class="hero__featured-meta">
+                                <img src="https://i.pravatar.cc/40?img=12" alt="" class="avatar" loading="eager">
+                                <span class="author">Por <strong>Marina Santos</strong></span>
+                                <time datetime="2026-02-17T10:00:00"><i class="far fa-clock"></i> Há 47 min</time>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+                <div class="hero__side">
+                    <article class="hero__side-card">
+                        <a href="noticia.html">
+                            <div class="hero__side-img"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=240&fit=crop&q=80" alt="Tela com gráficos do mercado financeiro" loading="eager"></div>
+                            <div class="hero__side-body">
+                                <span class="tag tag--economy">Economia</span>
+                                <h3>Ibovespa bate recorde histórico e ultrapassa 140 mil pontos com otimismo sobre juros</h3>
+                                <time><i class="far fa-clock"></i> Há 1h</time>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="hero__side-card">
+                        <a href="noticia.html">
+                            <div class="hero__side-img"><img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=240&fit=crop&q=80" alt="Chip de inteligência artificial" loading="eager"></div>
+                            <div class="hero__side-body">
+                                <span class="tag tag--tech">Tecnologia</span>
+                                <h3>Startup brasileira cria IA que detecta câncer com 98% de precisão e recebe US$ 200 mi</h3>
+                                <time><i class="far fa-clock"></i> Há 2h</time>
+                            </div>
+                        </a>
+                    </article>
+                    <article class="hero__side-card">
+                        <a href="noticia.html">
+                            <div class="hero__side-img"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=240&fit=crop&q=80" alt="Bola de futebol em campo" loading="eager"></div>
+                            <div class="hero__side-body">
+                                <span class="tag tag--sports">Esportes</span>
+                                <h3>Brasil goleia por 4x0 nas eliminatórias e lidera grupo rumo à Copa 2026</h3>
+                                <time><i class="far fa-clock"></i> Há 3h</time>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <!-- ===== COTAÇÕES ===== -->
+            <section class="quotebar" aria-label="Cotações do mercado">
+                <div class="quotebar__item"><span class="quotebar__label">Dólar</span><span class="quotebar__val down">R$ 4,87 <i class="fas fa-caret-down"></i> -1,2%</span></div>
+                <div class="quotebar__item"><span class="quotebar__label">Euro</span><span class="quotebar__val down">R$ 5,31 <i class="fas fa-caret-down"></i> -0,4%</span></div>
+                <div class="quotebar__item"><span class="quotebar__label">Ibovespa</span><span class="quotebar__val up">140.218 <i class="fas fa-caret-up"></i> +1,8%</span></div>
+                <div class="quotebar__item"><span class="quotebar__label">Bitcoin</span><span class="quotebar__val up">R$ 502.430 <i class="fas fa-caret-up"></i> +3,1%</span></div>
+                <div class="quotebar__item"><span class="quotebar__label">Selic</span><span class="quotebar__val neutral">9,50% a.a.</span></div>
+            </section>
+
+            <!-- ===== LAYOUT GRID ===== -->
+            <div class="layout">
+                <div class="layout__main">
+
+                    <!-- ÚLTIMAS NOTÍCIAS -->
+                    <section class="section reveal" id="ultimas">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent"></span>Últimas Notícias</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="card-grid card-grid--4">
+                            <article class="card reveal-child">
+                                <a href="noticia.html" class="card__link">
+                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?w=400&h=240&fit=crop&q=80" alt="Campanha de vacinação" loading="lazy"><span class="tag tag--health">Saúde</span></div>
+                                    <div class="card__body"><h3>Ministério inicia maior campanha de vacinação contra dengue: 50 milhões de doses</h3><time><i class="far fa-clock"></i> Há 1h</time></div>
+                                </a>
+                            </article>
+                            <article class="card reveal-child">
+                                <a href="noticia.html" class="card__link">
+                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=240&fit=crop&q=80" alt="Imagem do espaço" loading="lazy"><span class="tag tag--science">Ciência</span></div>
+                                    <div class="card__body"><h3>Pesquisadores descobrem nova espécie de dinossauro em escavação no interior de MG</h3><time><i class="far fa-clock"></i> Há 2h</time></div>
+                                </a>
+                            </article>
+                            <article class="card reveal-child">
+                                <a href="noticia.html" class="card__link">
+                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=240&fit=crop&q=80" alt="Artista em festival" loading="lazy"><span class="tag tag--culture">Cultura</span></div>
+                                    <div class="card__body"><h3>Festival de Cinema Brasileiro bate recorde de público com 200 filmes de 15 países</h3><time><i class="far fa-clock"></i> Há 3h</time></div>
+                                </a>
+                            </article>
+                            <article class="card reveal-child">
+                                <a href="noticia.html" class="card__link">
+                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=400&h=240&fit=crop&q=80" alt="Estudantes em sala de aula" loading="lazy"><span class="tag tag--education">Educação</span></div>
+                                    <div class="card__body"><h3>ENEM 2026: MEC anuncia mudanças no formato e novo sistema de correção digital</h3><time><i class="far fa-clock"></i> Há 4h</time></div>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- AD INLINE -->
+                    <div class="ad-banner ad-banner--inline"><div class="ad-placeholder"><span>Publicidade</span></div></div>
+
+                    <!-- POLÍTICA -->
+                    <section class="section reveal" id="politica">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-politics)"></span>Política</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="feed">
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=280&h=180&fit=crop&q=80" alt="Plenário do Senado" loading="lazy" class="feed__img"><div class="feed__body"><h3>Senado debate projeto que amplia acesso à educação em áreas rurais com investimento de R$ 5 bilhões</h3><p>Proposta prevê construção de 2.000 novas escolas e formação de 50 mil professores nos próximos quatro anos.</p><div class="feed__meta"><span class="feed__author">Por João Mendes</span><time><i class="far fa-clock"></i> Há 5h</time><span class="feed__comments"><i class="far fa-comment"></i> 234</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=280&h=180&fit=crop&q=80" alt="Câmara dos Deputados" loading="lazy" class="feed__img"><div class="feed__body"><h3>Câmara aprova marco regulatório para inteligência artificial no setor público brasileiro</h3><p>Nova lei define limites para uso de IA em decisões governamentais. Empresas terão 18 meses para se adaptar.</p><div class="feed__meta"><span class="feed__author">Por Carla Ribeiro</span><time><i class="far fa-clock"></i> Há 6h</time><span class="feed__comments"><i class="far fa-comment"></i> 189</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=280&h=180&fit=crop&q=80" alt="Governadores em reunião" loading="lazy" class="feed__img"><div class="feed__body"><h3>Governadores se reúnem para discutir novo pacto federativo e redistribuição de recursos</h3><p>Encontro visa equilibrar repasses da União, priorizando saúde e educação básica.</p><div class="feed__meta"><span class="feed__author">Por Paulo Andrade</span><time><i class="far fa-clock"></i> Há 7h</time><span class="feed__comments"><i class="far fa-comment"></i> 156</span></div></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- ECONOMIA -->
+                    <section class="section reveal" id="economia">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-economy)"></span>Economia</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="feed">
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=280&h=180&fit=crop&q=80" alt="Gráfico econômico" loading="lazy" class="feed__img"><div class="feed__body"><h3>PIB brasileiro cresce 3,2% e supera projeções: setor de serviços puxa resultado histórico</h3><p>Economia apresenta melhor desempenho em 5 anos, com geração recorde de empregos e aumento da renda.</p><div class="feed__meta"><span class="feed__author">Por Ana Beatriz Costa</span><time><i class="far fa-clock"></i> Há 5h</time><span class="feed__comments"><i class="far fa-comment"></i> 312</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=280&h=180&fit=crop&q=80" alt="Sede do Banco Central" loading="lazy" class="feed__img"><div class="feed__body"><h3>Banco Central mantém Selic em 9,5% e sinaliza corte na próxima reunião do Copom</h3><p>Decisão unânime reflete inflação controlada em 3,8% ao ano. Mercado precifica queda de 0,5 p.p.</p><div class="feed__meta"><span class="feed__author">Por Ricardo Lima</span><time><i class="far fa-clock"></i> Há 8h</time><span class="feed__comments"><i class="far fa-comment"></i> 178</span></div></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- TECNOLOGIA -->
+                    <section class="section reveal" id="tecnologia">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-tech)"></span>Tecnologia</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="card-grid card-grid--2">
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=260&fit=crop&q=80" alt="Painel de cibersegurança" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div><div class="card__body"><h3>Brasil lança programa de capacitação em IA para 1 milhão de jovens até 2028</h3><p>Iniciativa em parceria com big techs visa formar profissionais para a economia digital.</p><time><i class="far fa-clock"></i> Há 3h</time></div></a></article>
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=260&fit=crop&q=80" alt="Circuito tecnológico" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div><div class="card__body"><h3>Nova lei de proteção de dados digitais entra em vigor com multas de até R$ 50 milhões</h3><p>Empresas correm para se adaptar às regras que exigem consentimento explícito.</p><time><i class="far fa-clock"></i> Há 6h</time></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- SAÚDE -->
+                    <section class="section reveal" id="saude">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-health)"></span>Saúde</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="feed">
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=280&h=180&fit=crop&q=80" alt="Profissional de saúde" loading="lazy" class="feed__img"><div class="feed__body"><h3>Anvisa aprova novo medicamento que reduz em 70% os sintomas de Alzheimer precoce</h3><p>Droga desenvolvida em parceria com laboratório brasileiro e universidade americana chega ao SUS em 2027.</p><div class="feed__meta"><span class="feed__author">Por Dra. Luciana Ferreira</span><time><i class="far fa-clock"></i> Há 4h</time><span class="feed__comments"><i class="far fa-comment"></i> 521</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1b89?w=280&h=180&fit=crop&q=80" alt="Atividade física" loading="lazy" class="feed__img"><div class="feed__body"><h3>Estudo revela que 30 minutos diários de caminhada reduzem risco de infarto em 45%</h3><p>Pesquisa acompanhou 120 mil brasileiros por 10 anos e confirma benefícios de exercícios leves.</p><div class="feed__meta"><span class="feed__author">Por Marcos Silva</span><time><i class="far fa-clock"></i> Há 6h</time><span class="feed__comments"><i class="far fa-comment"></i> 298</span></div></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- ESPORTES -->
+                    <section class="section reveal" id="esportes">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-sports)"></span>Esportes</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="card-grid card-grid--3">
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=240&fit=crop&q=80" alt="Estádio de futebol" loading="lazy"><span class="tag tag--sports">Futebol</span></div><div class="card__body"><h3>Brasileirão 2026: veja os favoritos ao título segundo os especialistas</h3><time><i class="far fa-clock"></i> Há 2h</time></div></a></article>
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1461896836934-bd45ba6a28c2?w=400&h=240&fit=crop&q=80" alt="Corrida de Fórmula 1" loading="lazy"><span class="tag tag--sports">F1</span></div><div class="card__body"><h3>Piloto brasileiro conquista pódio no GP da Austrália e emociona torcida</h3><time><i class="far fa-clock"></i> Há 5h</time></div></a></article>
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?w=400&h=240&fit=crop&q=80" alt="Jogadora de vôlei" loading="lazy"><span class="tag tag--sports">Vôlei</span></div><div class="card__body"><h3>Seleção feminina de vôlei vence Itália e se classifica para as Olimpíadas 2028</h3><time><i class="far fa-clock"></i> Há 7h</time></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- AD INLINE -->
+                    <div class="ad-banner ad-banner--inline"><div class="ad-placeholder"><span>Publicidade</span></div></div>
+
+                    <!-- CULTURA -->
+                    <section class="section reveal" id="cultura">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-culture)"></span>Cultura</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="feed">
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=280&h=180&fit=crop&q=80" alt="Apresentação musical" loading="lazy" class="feed__img"><div class="feed__body"><h3>Rock in Rio 2026 divulga line-up completo com 120 atrações nacionais e internacionais</h3><p>Festival que celebra 40 anos terá palco dedicado a artistas brasileiros independentes.</p><div class="feed__meta"><span class="feed__author">Por Juliana Torres</span><time><i class="far fa-clock"></i> Há 3h</time><span class="feed__comments"><i class="far fa-comment"></i> 678</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=280&h=180&fit=crop&q=80" alt="Exposição de arte" loading="lazy" class="feed__img"><div class="feed__body"><h3>MASP inaugura maior exposição de arte afro-brasileira com 500 obras contemporâneas</h3><p>Mostra itinerante passará por 10 capitais com curadoria de nomes premiados internacionalmente.</p><div class="feed__meta"><span class="feed__author">Por Renata Souza</span><time><i class="far fa-clock"></i> Há 8h</time><span class="feed__comments"><i class="far fa-comment"></i> 145</span></div></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- MUNDO -->
+                    <section class="section reveal" id="mundo">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-world)"></span>Mundo</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="feed">
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=280&h=180&fit=crop&q=80" alt="Conferência climática" loading="lazy" class="feed__img"><div class="feed__body"><h3>195 países assinam acordo climático histórico: emissões devem cair 50% até 2030</h3><p>Tratado prevê US$ 4 trilhões em energia limpa e fim dos subsídios a combustíveis fósseis.</p><div class="feed__meta"><span class="feed__author">Por Fernanda Dias</span><time><i class="far fa-clock"></i> Há 4h</time><span class="feed__comments"><i class="far fa-comment"></i> 445</span></div></div></a></article>
+                            <article class="feed__item reveal-child"><a href="noticia.html" class="feed__link"><img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=280&h=180&fit=crop&q=80" alt="Bandeira da UE" loading="lazy" class="feed__img"><div class="feed__body"><h3>UE e Mercosul fecham acordo comercial de US$ 100 bilhões anuais após 25 anos</h3><p>Tratado elimina tarifas de 90% dos produtos e cria corredor de cooperação tecnológica.</p><div class="feed__meta"><span class="feed__author">Por Marcos Oliveira</span><time><i class="far fa-clock"></i> Há 9h</time><span class="feed__comments"><i class="far fa-comment"></i> 267</span></div></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- CIÊNCIA -->
+                    <section class="section reveal" id="ciencia">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-science)"></span>Ciência</h2>
+                            <a href="#" class="section__more">Ver todas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="card-grid card-grid--2">
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&h=260&fit=crop&q=80" alt="Lançamento de foguete" loading="lazy"><span class="tag tag--science">Espaço</span></div><div class="card__body"><h3>Brasil assina acordo com NASA para participar de missão à Lua em 2028</h3><p>Parceria inclui desenvolvimento de sensores e treinamento de astronauta brasileiro.</p><time><i class="far fa-clock"></i> Há 5h</time></div></a></article>
+                            <article class="card reveal-child"><a href="noticia.html" class="card__link"><div class="card__img"><img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=400&h=260&fit=crop&q=80" alt="Laboratório de pesquisa" loading="lazy"><span class="tag tag--science">Pesquisa</span></div><div class="card__body"><h3>Unicamp desenvolve plástico biodegradável de mandioca que se decompõe em 90 dias</h3><p>Material já é testado por indústrias e pode substituir plástico convencional.</p><time><i class="far fa-clock"></i> Há 7h</time></div></a></article>
+                        </div>
+                    </section>
+
+                    <!-- OPINIÃO / COLUNISTAS -->
+                    <section class="section reveal" id="opiniao">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--cat-opinion)"></span>Opinião</h2>
+                            <a href="#" class="section__more">Todos os colunistas <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="columnists">
+                            <article class="columnist reveal-child">
+                                <a href="noticia.html">
+                                    <img src="https://i.pravatar.cc/100?img=32" alt="Roberto Campos" class="columnist__avatar" loading="lazy">
+                                    <div class="columnist__info"><strong>Roberto Campos</strong><span class="columnist__role">Análise Política</span></div>
+                                    <h4>A reforma tributária não é perfeita, mas é o possível — e o necessário</h4>
+                                </a>
+                            </article>
+                            <article class="columnist reveal-child">
+                                <a href="noticia.html">
+                                    <img src="https://i.pravatar.cc/100?img=25" alt="Claudia Ramos" class="columnist__avatar" loading="lazy">
+                                    <div class="columnist__info"><strong>Claudia Ramos</strong><span class="columnist__role">Economia & Mercado</span></div>
+                                    <h4>O que a queda do dólar diz sobre o futuro da economia brasileira</h4>
+                                </a>
+                            </article>
+                            <article class="columnist reveal-child">
+                                <a href="noticia.html">
+                                    <img src="https://i.pravatar.cc/100?img=59" alt="André Takahashi" class="columnist__avatar" loading="lazy">
+                                    <div class="columnist__info"><strong>André Takahashi</strong><span class="columnist__role">Tecnologia & Futuro</span></div>
+                                    <h4>IA generativa: estamos prontos para as consequências no mercado de trabalho?</h4>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- VÍDEOS -->
+                    <section class="section reveal" id="videos">
+                        <header class="section__head">
+                            <h2 class="section__title"><span class="section__title-accent" style="background:var(--brand)"></span>Vídeos</h2>
+                            <a href="#" class="section__more">Ver todos <i class="fas fa-arrow-right"></i></a>
+                        </header>
+                        <div class="card-grid card-grid--3">
+                            <article class="video-card reveal-child"><a href="#"><div class="video-card__thumb"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=400&h=225&fit=crop&q=80" alt="Âncora de telejornal" loading="lazy"><div class="video-card__play"><i class="fas fa-play"></i></div><span class="video-card__duration">12:34</span></div><h4>Entenda a reforma tributária aprovada pelo Congresso</h4></a></article>
+                            <article class="video-card reveal-child"><a href="#"><div class="video-card__thumb"><img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=225&fit=crop&q=80" alt="Inteligência artificial" loading="lazy"><div class="video-card__play"><i class="fas fa-play"></i></div><span class="video-card__duration">8:15</span></div><h4>IA no Brasil: startups que estão revolucionando a saúde</h4></a></article>
+                            <article class="video-card reveal-child"><a href="#"><div class="video-card__thumb"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=400&h=225&fit=crop&q=80" alt="Jogo de futebol" loading="lazy"><div class="video-card__play"><i class="fas fa-play"></i></div><span class="video-card__duration">15:42</span></div><h4>Análise tática: como o Brasil pode chegar ao hexa</h4></a></article>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- ====== SIDEBAR ====== -->
+                <aside class="sidebar" aria-label="Conteúdo complementar">
+                    <div class="widget widget--trending">
+                        <h3 class="widget__title"><i class="fas fa-fire-flame-curved"></i> Mais Lidas</h3>
+                        <ol class="trending">
+                            <li class="trending__item"><span class="trending__rank">1</span><a href="noticia.html" class="trending__link">Congresso aprova reforma tributária histórica após 8 meses de negociação</a></li>
+                            <li class="trending__item"><span class="trending__rank">2</span><a href="noticia.html" class="trending__link">Brasil goleia por 4x0 e lidera eliminatórias da Copa 2026</a></li>
+                            <li class="trending__item"><span class="trending__rank">3</span><a href="noticia.html" class="trending__link">Dólar em queda livre: especialistas apontam R$ 4,50 até dezembro</a></li>
+                            <li class="trending__item"><span class="trending__rank">4</span><a href="noticia.html" class="trending__link">Startup de IA recebe investimento recorde de US$ 200 milhões</a></li>
+                            <li class="trending__item"><span class="trending__rank">5</span><a href="noticia.html" class="trending__link">Nova espécie de dinossauro é descoberta em Minas Gerais</a></li>
+                            <li class="trending__item"><span class="trending__rank">6</span><a href="noticia.html" class="trending__link">Vacinação contra dengue bate recorde: 8 milhões no 1º dia</a></li>
+                            <li class="trending__item"><span class="trending__rank">7</span><a href="noticia.html" class="trending__link">PIB surpreende e economia vive melhor momento em 10 anos</a></li>
+                            <li class="trending__item"><span class="trending__rank">8</span><a href="noticia.html" class="trending__link">Rock in Rio 2026 divulga line-up com 120 atrações</a></li>
+                            <li class="trending__item"><span class="trending__rank">9</span><a href="noticia.html" class="trending__link">Acordo climático global: o que muda para o Brasil</a></li>
+                            <li class="trending__item"><span class="trending__rank">10</span><a href="noticia.html" class="trending__link">Anvisa aprova remédio contra Alzheimer pelo SUS</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- AD SIDEBAR -->
+                    <div class="ad-banner ad-banner--sidebar"><div class="ad-placeholder ad-placeholder--tall"><span>Publicidade</span></div></div>
+
+                    <!-- TEMPO -->
+                    <div class="widget widget--weather">
+                        <h3 class="widget__title"><i class="fas fa-cloud-sun"></i> Tempo Agora</h3>
+                        <div class="weather">
+                            <div class="weather__main"><div class="weather__icon"><i class="fas fa-cloud-sun"></i></div><div class="weather__temp">28<sup>°C</sup></div></div>
+                            <div class="weather__info"><strong>São Paulo, SP</strong><span>Parcialmente nublado</span></div>
+                            <div class="weather__details"><div><i class="fas fa-tint"></i> 65%</div><div><i class="fas fa-wind"></i> 12 km/h</div><div><i class="fas fa-temperature-low"></i> Mín: 19°</div><div><i class="fas fa-temperature-high"></i> Máx: 31°</div></div>
+                        </div>
+                    </div>
+
+                    <!-- NEWSLETTER -->
+                    <div class="widget widget--newsletter">
+                        <div class="newsletter">
+                            <div class="newsletter__icon"><i class="far fa-envelope"></i></div>
+                            <h3>Fique por dentro</h3>
+                            <p>Receba as principais notícias do dia direto no seu e-mail. É grátis!</p>
+                            <form class="newsletter__form" id="newsletterForm">
+                                <input type="text" placeholder="Seu nome" required aria-label="Seu nome">
+                                <input type="email" placeholder="Seu melhor e-mail" required aria-label="Seu e-mail">
+                                <button type="submit">Cadastrar gratuitamente</button>
+                            </form>
+                            <small>Ao se cadastrar, você concorda com nossa <a href="#">Política de Privacidade</a>.</small>
+                        </div>
+                    </div>
+
+                    <!-- REDES SOCIAIS -->
+                    <div class="widget">
+                        <h3 class="widget__title"><i class="fas fa-share-nodes"></i> Siga-nos</h3>
+                        <div class="social-grid">
+                            <a href="#" class="social-grid__btn social-grid__btn--fb"><i class="fab fa-facebook-f"></i><div><strong>1.2M</strong><span>Curtidas</span></div></a>
+                            <a href="#" class="social-grid__btn social-grid__btn--ig"><i class="fab fa-instagram"></i><div><strong>890K</strong><span>Seguidores</span></div></a>
+                            <a href="#" class="social-grid__btn social-grid__btn--yt"><i class="fab fa-youtube"></i><div><strong>2.1M</strong><span>Inscritos</span></div></a>
+                            <a href="#" class="social-grid__btn social-grid__btn--tw"><i class="fab fa-x-twitter"></i><div><strong>670K</strong><span>Seguidores</span></div></a>
+                            <a href="#" class="social-grid__btn social-grid__btn--tg"><i class="fab fa-telegram"></i><div><strong>340K</strong><span>Membros</span></div></a>
+                            <a href="#" class="social-grid__btn social-grid__btn--tk"><i class="fab fa-tiktok"></i><div><strong>1.5M</strong><span>Seguidores</span></div></a>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo"><div class="header__logo-mark"><span>NH</span></div><strong>Notícias<span>Hoje</span></strong></a>
+                    <p>Jornalismo sério, imparcial e comprometido com a verdade. Informação de qualidade 24 horas por dia.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col"><h4>Editorias</h4><ul><li><a href="#politica">Política</a></li><li><a href="#economia">Economia</a></li><li><a href="#tecnologia">Tecnologia</a></li><li><a href="#esportes">Esportes</a></li><li><a href="#cultura">Cultura</a></li><li><a href="#ciencia">Ciência</a></li><li><a href="#saude">Saúde</a></li><li><a href="#opiniao">Opinião</a></li></ul></div>
+                    <div class="footer__col"><h4>Portal</h4><ul><li><a href="sobre.html">Sobre o NH</a></li><li><a href="expediente.html">Expediente</a></li><li><a href="privacidade.html">Política de Privacidade</a></li><li><a href="termos.html">Termos de Uso</a></li><li><a href="etica.html">Código de Ética</a></li><li><a href="anuncie.html">Anuncie</a></li></ul></div>
+                    <div class="footer__col"><h4>Contato</h4><ul><li><a href="mailto:contato@noticiashoje.com.br"><i class="far fa-envelope"></i> contato@noticiashoje.com.br</a></li><li><a href="tel:+551130000000"><i class="fas fa-phone"></i> (11) 3000-0000</a></li><li><a href="#"><i class="fas fa-map-marker-alt"></i> São Paulo, SP — Brasil</a></li><li><a href="#"><i class="far fa-comment-dots"></i> Fale com a Redação</a></li><li><a href="#"><i class="far fa-paper-plane"></i> Envie sua Pauta</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 NotíciasHoje. Todos os direitos reservados. Proibida a reprodução sem autorização. <a href="admin/index.html" style="color:inherit;opacity:.4;font-size:11px;margin-left:1rem;" title="Painel Admin"><i class="fas fa-lock"></i> Admin</a></p>
+                <div class="footer__badges"><span><i class="fas fa-shield-halved"></i> Site Seguro</span><span><i class="fas fa-check-circle"></i> Jornalismo Verificado</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="btt" id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- LGPD COOKIE CONSENT -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+        <div class="cookie-banner__inner">
+            <div class="cookie-banner__text">
+                <i class="fas fa-cookie-bite"></i>
+                <p>Utilizamos cookies para melhorar sua experiência, personalizar conteúdo e analisar nosso tráfego. Ao continuar navegando, você concorda com nossa <a href="#">Política de Privacidade</a> e <a href="#">Política de Cookies</a>.</p>
+            </div>
+            <div class="cookie-banner__actions">
+                <button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceitar todos</button>
+                <button class="cookie-btn cookie-btn--reject" id="cookieReject">Rejeitar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

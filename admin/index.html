@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Painel Admin — NotíciasHoje</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <!-- ====== LOGIN SCREEN ====== -->
+    <div class="login-screen" id="loginScreen">
+        <div class="login-card">
+            <div class="login-card__logo"><div class="logo-mark"><span>NH</span></div><h1>NotíciasHoje</h1><p>Painel Administrativo</p></div>
+            <form class="login-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginUser"><i class="fas fa-user"></i> Usuário</label>
+                    <input type="text" id="loginUser" placeholder="admin" autocomplete="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPass"><i class="fas fa-lock"></i> Senha</label>
+                    <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password" required>
+                </div>
+                <div class="login-error" id="loginError"><i class="fas fa-exclamation-triangle"></i> Usuário ou senha incorretos</div>
+                <button type="submit" class="btn btn--primary btn--full"><i class="fas fa-sign-in-alt"></i> Entrar</button>
+                <small class="login-hint">Padrão: admin / admin123</small>
+            </form>
+        </div>
+    </div>
+
+    <!-- ====== ADMIN PANEL ====== -->
+    <div class="admin" id="adminPanel" style="display:none;">
+        <!-- SIDEBAR -->
+        <aside class="admin-sidebar" id="adminSidebar">
+            <div class="admin-sidebar__header">
+                <div class="logo-mark logo-mark--sm"><span>NH</span></div>
+                <span class="admin-sidebar__title">Admin</span>
+                <button class="admin-sidebar__close" id="sidebarClose"><i class="fas fa-times"></i></button>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav__link active" data-section="dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+                <a href="#" class="admin-nav__link" data-section="site-settings"><i class="fas fa-cog"></i> Config. do Site</a>
+                <a href="#" class="admin-nav__link" data-section="news-manager"><i class="fas fa-newspaper"></i> Notícias</a>
+                <a href="#" class="admin-nav__link" data-section="banners"><i class="fas fa-rectangle-ad"></i> Publicidade</a>
+                <a href="#" class="admin-nav__link" data-section="breaking-news"><i class="fas fa-bolt"></i> Breaking News</a>
+                <a href="#" class="admin-nav__link" data-section="quotes"><i class="fas fa-chart-bar"></i> Cotações</a>
+                <a href="#" class="admin-nav__link" data-section="pages"><i class="fas fa-file-alt"></i> Páginas</a>
+                <a href="#" class="admin-nav__link" data-section="import-sites"><i class="fas fa-rss"></i> Importar de Sites</a>
+                <a href="#" class="admin-nav__link" data-section="generate-pages"><i class="fas fa-file-code"></i> Gerar Páginas</a>
+            </nav>
+            <div class="admin-sidebar__footer">
+                <button class="btn btn--danger btn--sm btn--full" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Sair</button>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="admin-main">
+            <!-- TOP BAR -->
+            <header class="admin-topbar">
+                <button class="admin-topbar__menu" id="sidebarToggle"><i class="fas fa-bars"></i></button>
+                <h2 class="admin-topbar__title" id="sectionTitle">Dashboard</h2>
+                <div class="admin-topbar__right">
+                    <a href="../index.html" target="_blank" class="btn btn--outline btn--sm"><i class="fas fa-external-link-alt"></i> Ver Site</a>
+                    <span class="admin-topbar__user"><i class="fas fa-user-circle"></i> Admin</span>
+                </div>
+            </header>
+
+            <div class="admin-content" id="adminContent">
+
+                <!-- ===== DASHBOARD ===== -->
+                <section class="admin-section active" id="sec-dashboard">
+                    <div class="stats-grid">
+                        <div class="stat-card"><div class="stat-card__icon" style="background:#e3f2fd;color:#1976D2;"><i class="fas fa-newspaper"></i></div><div class="stat-card__info"><span class="stat-card__val" id="statNews">0</span><span class="stat-card__label">Notícias Cadastradas</span></div></div>
+                        <div class="stat-card"><div class="stat-card__icon" style="background:#fce4ec;color:#D32F2F;"><i class="fas fa-rectangle-ad"></i></div><div class="stat-card__info"><span class="stat-card__val" id="statBanners">0</span><span class="stat-card__label">Banners Ativos</span></div></div>
+                        <div class="stat-card"><div class="stat-card__icon" style="background:#e8f5e9;color:#388E3C;"><i class="fas fa-bolt"></i></div><div class="stat-card__info"><span class="stat-card__val" id="statBreaking">0</span><span class="stat-card__label">Breaking News</span></div></div>
+                        <div class="stat-card"><div class="stat-card__icon" style="background:#fff3e0;color:#F57C00;"><i class="fas fa-file-alt"></i></div><div class="stat-card__info"><span class="stat-card__val">8</span><span class="stat-card__label">Páginas Ativas</span></div></div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-info-circle"></i> Guia Rápido</h3></div>
+                        <div class="panel__body">
+                            <div class="quick-guide">
+                                <div class="quick-guide__item"><i class="fas fa-cog"></i><h4>Configurações</h4><p>Altere nome do site, slogan, logo, favicon e redes sociais.</p></div>
+                                <div class="quick-guide__item"><i class="fas fa-newspaper"></i><h4>Notícias</h4><p>Crie, edite e exclua matérias. Defina categorias, imagens e destaques.</p></div>
+                                <div class="quick-guide__item"><i class="fas fa-rectangle-ad"></i><h4>Publicidade</h4><p>Gerencie banners por posição (topo, inline, sidebar). Upload de imagens e URLs.</p></div>
+                                <div class="quick-guide__item"><i class="fas fa-bolt"></i><h4>Breaking News</h4><p>Atualize o ticker de notícias urgentes em tempo real.</p></div>
+                                <div class="quick-guide__item"><i class="fas fa-chart-bar"></i><h4>Cotações</h4><p>Edite valores de Dólar, Euro, Ibovespa, Bitcoin e Selic.</p></div>
+                                <div class="quick-guide__item"><i class="fas fa-file-alt"></i><h4>Páginas</h4><p>Edite conteúdo das páginas institucionais do portal.</p></div>
+                            </div>
+                            <div class="alert alert--info"><i class="fas fa-database"></i> Todos os dados são armazenados no <strong>localStorage</strong> do navegador. Em produção, conecte a um banco de dados/API. Use <strong>"Exportar Dados"</strong> para salvar backup em JSON.</div>
+                            <div style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap;">
+                                <button class="btn btn--primary" id="exportBtn"><i class="fas fa-download"></i> Exportar Dados (JSON)</button>
+                                <label class="btn btn--outline" style="cursor:pointer"><i class="fas fa-upload"></i> Importar Dados (JSON)<input type="file" accept=".json" id="importBtn" style="display:none"></label>
+                                <button class="btn btn--danger" id="resetBtn"><i class="fas fa-trash-alt"></i> Resetar Tudo</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== SITE SETTINGS ===== -->
+                <section class="admin-section" id="sec-site-settings">
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-palette"></i> Identidade Visual</h3></div>
+                        <div class="panel__body">
+                            <div class="form-row">
+                                <div class="form-group"><label>Nome do Site</label><input type="text" id="cfgSiteName" placeholder="NotíciasHoje"></div>
+                                <div class="form-group"><label>Slogan</label><input type="text" id="cfgSlogan" placeholder="Informação com credibilidade"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Sigla (Logo Mark)</label><input type="text" id="cfgLogoMark" placeholder="NH" maxlength="4"></div>
+                                <div class="form-group"><label>Cor Principal (Brand)</label><input type="color" id="cfgBrandColor" value="#D32F2F" class="input-color"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Logo Personalizado (URL ou upload)</label>
+                                    <input type="text" id="cfgLogoUrl" placeholder="https://... ou deixe vazio para usar texto">
+                                    <label class="btn btn--outline btn--sm" style="margin-top:.5rem;cursor:pointer"><i class="fas fa-upload"></i> Upload Logo<input type="file" accept="image/*" id="cfgLogoFile" style="display:none"></label>
+                                    <div class="preview-box" id="logoPreview"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Favicon (URL ou upload)</label>
+                                    <input type="text" id="cfgFaviconUrl" placeholder="https://... ou deixe vazio para favicon padrão">
+                                    <label class="btn btn--outline btn--sm" style="margin-top:.5rem;cursor:pointer"><i class="fas fa-upload"></i> Upload Favicon<input type="file" accept="image/*" id="cfgFaviconFile" style="display:none"></label>
+                                    <div class="preview-box" id="faviconPreview"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-share-nodes"></i> Redes Sociais</h3></div>
+                        <div class="panel__body">
+                            <div class="form-row">
+                                <div class="form-group"><label><i class="fab fa-facebook-f"></i> Facebook</label><input type="url" id="cfgFacebook" placeholder="https://facebook.com/..."></div>
+                                <div class="form-group"><label><i class="fab fa-instagram"></i> Instagram</label><input type="url" id="cfgInstagram" placeholder="https://instagram.com/..."></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label><i class="fab fa-x-twitter"></i> Twitter/X</label><input type="url" id="cfgTwitter" placeholder="https://x.com/..."></div>
+                                <div class="form-group"><label><i class="fab fa-youtube"></i> YouTube</label><input type="url" id="cfgYoutube" placeholder="https://youtube.com/..."></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label><i class="fab fa-tiktok"></i> TikTok</label><input type="url" id="cfgTiktok" placeholder="https://tiktok.com/..."></div>
+                                <div class="form-group"><label><i class="fab fa-telegram"></i> Telegram</label><input type="url" id="cfgTelegram" placeholder="https://t.me/..."></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-globe"></i> SEO & Meta Tags</h3></div>
+                        <div class="panel__body">
+                            <div class="form-group"><label>Meta Description</label><textarea id="cfgMetaDesc" rows="2" placeholder="Descrição do site para mecanismos de busca"></textarea></div>
+                            <div class="form-group"><label>OG Image (URL)</label><input type="text" id="cfgOgImage" placeholder="https://...imagem de compartilhamento 1200x630"></div>
+                        </div>
+                    </div>
+                    <button class="btn btn--primary btn--lg" id="saveSiteSettings"><i class="fas fa-save"></i> Salvar Configurações</button>
+                </section>
+
+                <!-- ===== NEWS MANAGER ===== -->
+                <section class="admin-section" id="sec-news-manager">
+                    <div class="section-toolbar">
+                        <button class="btn btn--primary" id="addNewsBtn"><i class="fas fa-plus"></i> Nova Notícia</button>
+                        <label class="btn btn--outline" style="cursor:pointer"><i class="fas fa-file-import"></i> Importar Notícias (JSON)<input type="file" accept=".json" id="importNewsFile" style="display:none"></label>
+                        <button class="btn btn--outline" id="exportNewsBtn"><i class="fas fa-file-export"></i> Exportar Notícias</button>
+                    </div>
+                    <!-- NEWS FORM (hidden by default) -->
+                    <div class="panel" id="newsFormPanel" style="display:none;">
+                        <div class="panel__header"><h3 id="newsFormTitle"><i class="fas fa-edit"></i> Nova Notícia</h3><button class="btn btn--ghost btn--sm" id="closeNewsForm"><i class="fas fa-times"></i></button></div>
+                        <div class="panel__body">
+                            <input type="hidden" id="newsEditId">
+                            <div class="form-row">
+                                <div class="form-group form-group--lg"><label>Título *</label><input type="text" id="newsTitle" placeholder="Título da notícia" required></div>
+                                <div class="form-group"><label>Categoria *</label><select id="newsCategory"><option value="politica">Política</option><option value="economia">Economia</option><option value="tecnologia">Tecnologia</option><option value="saude">Saúde</option><option value="esportes">Esportes</option><option value="cultura">Cultura</option><option value="mundo">Mundo</option><option value="ciencia">Ciência</option><option value="educacao">Educação</option><option value="opiniao">Opinião</option></select></div>
+                            </div>
+                            <div class="form-group"><label>Subtítulo / Resumo</label><textarea id="newsSubtitle" rows="2" placeholder="Resumo da matéria"></textarea></div>
+                            <div class="form-group"><label>Conteúdo (HTML)</label><textarea id="newsContent" rows="10" placeholder="<p>Escreva o conteúdo da notícia em HTML...</p>"></textarea></div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Imagem de Capa (URL ou upload)</label>
+                                    <input type="text" id="newsImage" placeholder="https://...">
+                                    <label class="btn btn--outline btn--sm" style="margin-top:.5rem;cursor:pointer"><i class="fas fa-upload"></i> Upload<input type="file" accept="image/*" id="newsImageFile" style="display:none"></label>
+                                    <div class="preview-box" id="newsImagePreview"></div>
+                                </div>
+                                <div class="form-group"><label>Autor</label><input type="text" id="newsAuthor" placeholder="Nome do autor"><label style="margin-top:.75rem">Tags (separadas por vírgula)</label><input type="text" id="newsTags" placeholder="reforma, economia, governo"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Data/Hora</label><input type="datetime-local" id="newsDate"></div>
+                                <div class="form-group"><label>Status</label><select id="newsStatus"><option value="published">Publicado</option><option value="draft">Rascunho</option><option value="featured">Destaque (Hero)</option></select></div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn--primary" id="saveNewsBtn"><i class="fas fa-save"></i> Salvar Notícia</button>
+                                <button class="btn btn--ghost" id="cancelNewsBtn">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- NEWS LIST -->
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-list"></i> Notícias Cadastradas</h3><div class="panel__header-actions"><input type="text" id="newsSearch" placeholder="Buscar..." class="input-search"><select id="newsFilterCat" class="input-select"><option value="">Todas categorias</option><option value="politica">Política</option><option value="economia">Economia</option><option value="tecnologia">Tecnologia</option><option value="saude">Saúde</option><option value="esportes">Esportes</option><option value="cultura">Cultura</option><option value="mundo">Mundo</option><option value="ciencia">Ciência</option></select></div></div>
+                        <div class="panel__body" id="newsListBody">
+                            <div class="empty-state" id="newsEmpty"><i class="fas fa-newspaper"></i><p>Nenhuma notícia cadastrada.</p><small>Clique em "Nova Notícia" para começar.</small></div>
+                            <table class="data-table" id="newsTable" style="display:none;"><thead><tr><th style="width:40px"></th><th>Título</th><th style="width:110px">Categoria</th><th style="width:90px">Status</th><th style="width:130px">Data</th><th style="width:120px">Ações</th></tr></thead><tbody id="newsTableBody"></tbody></table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== BANNERS / ADS ===== -->
+                <section class="admin-section" id="sec-banners">
+                    <div class="section-toolbar">
+                        <button class="btn btn--primary" id="addBannerBtn"><i class="fas fa-plus"></i> Novo Banner</button>
+                    </div>
+                    <div class="panel" id="bannerFormPanel" style="display:none;">
+                        <div class="panel__header"><h3 id="bannerFormTitle"><i class="fas fa-rectangle-ad"></i> Novo Banner</h3><button class="btn btn--ghost btn--sm" id="closeBannerForm"><i class="fas fa-times"></i></button></div>
+                        <div class="panel__body">
+                            <input type="hidden" id="bannerEditId">
+                            <div class="form-row">
+                                <div class="form-group"><label>Nome / Identificação</label><input type="text" id="bannerName" placeholder="Ex: Banner Topo Principal"></div>
+                                <div class="form-group"><label>Posição *</label><select id="bannerPosition"><option value="leaderboard">Topo (Leaderboard 970x90)</option><option value="inline-1">Meio do Conteúdo 1</option><option value="inline-2">Meio do Conteúdo 2</option><option value="sidebar">Sidebar (300x600)</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Imagem do Banner (URL ou upload) *</label>
+                                    <input type="text" id="bannerImage" placeholder="https://...">
+                                    <label class="btn btn--outline btn--sm" style="margin-top:.5rem;cursor:pointer"><i class="fas fa-upload"></i> Upload Banner<input type="file" accept="image/*" id="bannerImageFile" style="display:none"></label>
+                                    <div class="preview-box" id="bannerImagePreview"></div>
+                                </div>
+                                <div class="form-group"><label>Link de Destino (URL)</label><input type="url" id="bannerLink" placeholder="https://anunciante.com.br"><label style="margin-top:.75rem">Abrir em nova aba?</label><select id="bannerTarget"><option value="_blank">Sim (nova aba)</option><option value="_self">Não (mesma aba)</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Ativo?</label><select id="bannerActive"><option value="true">Sim</option><option value="false">Não</option></select></div>
+                                <div class="form-group"><label>Código HTML/JS (opcional)</label><textarea id="bannerCode" rows="3" placeholder="Cole aqui código de ad network (Google Ads, etc.)"></textarea></div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn--primary" id="saveBannerBtn"><i class="fas fa-save"></i> Salvar Banner</button>
+                                <button class="btn btn--ghost" id="cancelBannerBtn">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-list"></i> Banners Cadastrados</h3></div>
+                        <div class="panel__body">
+                            <div class="empty-state" id="bannersEmpty"><i class="fas fa-rectangle-ad"></i><p>Nenhum banner cadastrado.</p></div>
+                            <table class="data-table" id="bannersTable" style="display:none;"><thead><tr><th style="width:60px">Preview</th><th>Nome</th><th style="width:160px">Posição</th><th style="width:80px">Status</th><th style="width:120px">Ações</th></tr></thead><tbody id="bannersTableBody"></tbody></table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== BREAKING NEWS ===== -->
+                <section class="admin-section" id="sec-breaking-news">
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-bolt"></i> Notícias Urgentes (Ticker)</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Gerencie os itens que aparecem na barra de "URGENTE" no topo do site. As notícias rodam em loop contínuo.</p>
+                            <div id="breakingList"></div>
+                            <button class="btn btn--outline" id="addBreakingBtn" style="margin-top:1rem;"><i class="fas fa-plus"></i> Adicionar Item</button>
+                            <button class="btn btn--primary" id="saveBreakingBtn" style="margin-top:1rem;margin-left:.5rem;"><i class="fas fa-save"></i> Salvar Breaking News</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== COTAÇÕES ===== -->
+                <section class="admin-section" id="sec-quotes">
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-chart-bar"></i> Cotações do Mercado</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Edite os valores exibidos na barra de cotações do site.</p>
+                            <div class="form-row">
+                                <div class="form-group"><label>Dólar (valor)</label><input type="text" id="qDolarVal" placeholder="R$ 4,87"></div>
+                                <div class="form-group"><label>Dólar (variação)</label><input type="text" id="qDolarVar" placeholder="-1,2%"></div>
+                                <div class="form-group"><label>Direção</label><select id="qDolarDir"><option value="down">Queda ↓</option><option value="up">Alta ↑</option><option value="neutral">Neutro</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Euro (valor)</label><input type="text" id="qEuroVal" placeholder="R$ 5,31"></div>
+                                <div class="form-group"><label>Euro (variação)</label><input type="text" id="qEuroVar" placeholder="-0,4%"></div>
+                                <div class="form-group"><label>Direção</label><select id="qEuroDir"><option value="down">Queda ↓</option><option value="up">Alta ↑</option><option value="neutral">Neutro</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Ibovespa (valor)</label><input type="text" id="qIbovVal" placeholder="140.218"></div>
+                                <div class="form-group"><label>Ibovespa (variação)</label><input type="text" id="qIbovVar" placeholder="+1,8%"></div>
+                                <div class="form-group"><label>Direção</label><select id="qIbovDir"><option value="up">Alta ↑</option><option value="down">Queda ↓</option><option value="neutral">Neutro</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Bitcoin (valor)</label><input type="text" id="qBtcVal" placeholder="R$ 502.430"></div>
+                                <div class="form-group"><label>Bitcoin (variação)</label><input type="text" id="qBtcVar" placeholder="+3,1%"></div>
+                                <div class="form-group"><label>Direção</label><select id="qBtcDir"><option value="up">Alta ↑</option><option value="down">Queda ↓</option><option value="neutral">Neutro</option></select></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group"><label>Selic (valor)</label><input type="text" id="qSelicVal" placeholder="9,50% a.a."></div>
+                                <div class="form-group"><label>Selic (variação)</label><input type="text" id="qSelicVar" placeholder=""></div>
+                                <div class="form-group"><label>Direção</label><select id="qSelicDir"><option value="neutral">Neutro</option><option value="up">Alta ↑</option><option value="down">Queda ↓</option></select></div>
+                            </div>
+                            <button class="btn btn--primary btn--lg" id="saveQuotesBtn"><i class="fas fa-save"></i> Salvar Cotações</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== PAGES ===== -->
+                <section class="admin-section" id="sec-pages">
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-file-alt"></i> Páginas do Portal</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Selecione uma página para editar seu conteúdo.</p>
+                            <div class="pages-grid">
+                                <div class="page-card" data-page="sobre"><i class="fas fa-info-circle"></i><h4>Sobre o NH</h4><span>sobre.html</span></div>
+                                <div class="page-card" data-page="expediente"><i class="fas fa-users"></i><h4>Expediente</h4><span>expediente.html</span></div>
+                                <div class="page-card" data-page="privacidade"><i class="fas fa-shield-halved"></i><h4>Privacidade</h4><span>privacidade.html</span></div>
+                                <div class="page-card" data-page="termos"><i class="fas fa-file-contract"></i><h4>Termos de Uso</h4><span>termos.html</span></div>
+                                <div class="page-card" data-page="etica"><i class="fas fa-scale-balanced"></i><h4>Código de Ética</h4><span>etica.html</span></div>
+                                <div class="page-card" data-page="anuncie"><i class="fas fa-bullhorn"></i><h4>Anuncie</h4><span>anuncie.html</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel" id="pageEditorPanel" style="display:none;">
+                        <div class="panel__header"><h3 id="pageEditorTitle"><i class="fas fa-edit"></i> Editando Página</h3><button class="btn btn--ghost btn--sm" id="closePageEditor"><i class="fas fa-times"></i></button></div>
+                        <div class="panel__body">
+                            <input type="hidden" id="pageEditSlug">
+                            <div class="form-group"><label>Título da Página</label><input type="text" id="pageTitle"></div>
+                            <div class="form-group"><label>Conteúdo (HTML)</label><textarea id="pageContent" rows="18" placeholder="HTML do conteúdo da página"></textarea></div>
+                            <div class="form-actions">
+                                <button class="btn btn--primary" id="savePageBtn"><i class="fas fa-save"></i> Salvar Página</button>
+                                <button class="btn btn--ghost" id="cancelPageBtn">Cancelar</button>
+                            </div>
+                            <div class="alert alert--warning" style="margin-top:1rem;"><i class="fas fa-exclamation-triangle"></i> <strong>Nota:</strong> Como este é um site estático, as alterações de conteúdo das páginas institucionais são aplicadas via JavaScript no navegador do visitante. Para alterações permanentes, edite o arquivo HTML correspondente diretamente.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== IMPORT FROM SITES ===== -->
+                <section class="admin-section" id="sec-import-sites">
+                    <!-- RSS FEED IMPORT -->
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-rss"></i> Importar via RSS Feed</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Cole a URL de um feed RSS/Atom ou escolha um dos portais populares abaixo. As notícias serão buscadas e exibidas para revisão antes da importação.</p>
+                            <div class="import-feed-input">
+                                <input type="url" id="rssFeedUrl" placeholder="https://site.com.br/feed/ ou https://site.com.br (auto-detecta)" class="input-lg">
+                                <button class="btn btn--primary" id="fetchRssBtn"><i class="fas fa-search"></i> Buscar Feed</button>
+                            </div>
+                            <div class="form-row" style="margin-bottom:1rem;">
+                                <div class="form-group">
+                                    <label><i class="fas fa-pen-fancy"></i> Fonte personalizada (substitui a fonte original)</label>
+                                    <input type="text" id="importCustomSource" placeholder="Ex: NotíciasHoje — deixe vazio para manter o original">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-user-edit"></i> Autor personalizado</label>
+                                    <input type="text" id="importCustomAuthor" placeholder="Ex: Redação NH — deixe vazio para manter o original">
+                                </div>
+                            </div>
+                            <div class="import-popular-feeds">
+                                <span class="import-popular-feeds__label"><i class="fas fa-star"></i> Feeds Populares:</span>
+                                <div class="feed-chips">
+                                    <button class="feed-chip" data-feed="https://g1.globo.com/rss/g1/">G1</button>
+                                    <button class="feed-chip" data-feed="https://feeds.folha.uol.com.br/folha/emcimadahora/rss091.xml">Folha de SP</button>
+                                    <button class="feed-chip" data-feed="https://www.estadao.com.br/arc/outboundfeeds/rss/?outputType=xml">Estadão</button>
+                                    <button class="feed-chip" data-feed="https://rss.uol.com.br/feed/noticias.xml">UOL</button>
+                                    <button class="feed-chip" data-feed="https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml">Agência Brasil</button>
+                                    <button class="feed-chip" data-feed="https://www.cnnbrasil.com.br/feed/">CNN Brasil</button>
+                                    <button class="feed-chip" data-feed="https://tecnoblog.net/feed/">Tecnoblog</button>
+                                    <button class="feed-chip" data-feed="https://olhardigital.com.br/feed/">Olhar Digital</button>
+                                    <button class="feed-chip" data-feed="https://www.tecmundo.com.br/rss">TecMundo</button>
+                                    <button class="feed-chip" data-feed="https://ge.globo.com/rss/ge/">GE (Esportes)</button>
+                                    <button class="feed-chip" data-feed="https://www.odiariodemogi.net.br/feed/">O Diário de Mogi</button>
+                                    <button class="feed-chip" data-feed="https://www.gazetasp.com.br/feed/">Gazeta SP</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SCRAPE BY URL -->
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-link"></i> Importar por URL (Artigo Único)</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Cole o link de qualquer notícia. O sistema tentará extrair automaticamente título, imagem, descrição e conteúdo via meta tags (Open Graph).</p>
+                            <div class="import-feed-input">
+                                <input type="url" id="scrapeUrl" placeholder="https://site.com.br/noticia-exemplo" class="input-lg">
+                                <button class="btn btn--primary" id="scrapeUrlBtn"><i class="fas fa-magic"></i> Extrair Artigo</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LOADING -->
+                    <div class="import-loading" id="importLoading" style="display:none;">
+                        <div class="import-loading__spinner"></div>
+                        <p>Buscando conteúdo externo...</p>
+                        <small>Usando proxy CORS para acessar o site</small>
+                    </div>
+
+                    <!-- RESULTS -->
+                    <div class="panel" id="importResultsPanel" style="display:none;">
+                        <div class="panel__header">
+                            <h3><i class="fas fa-newspaper"></i> Resultados — <span id="importResultsCount">0</span> itens encontrados</h3>
+                            <div class="panel__header-actions">
+                                <button class="btn btn--outline btn--sm" id="selectAllImport"><i class="fas fa-check-double"></i> Selecionar Todos</button>
+                                <button class="btn btn--success btn--sm" id="importAllBtn"><i class="fas fa-download"></i> Importar TODOS</button>
+                                <button class="btn btn--primary btn--sm" id="importSelectedBtn"><i class="fas fa-download"></i> Importar Selecionados (<span id="importSelectedCount">0</span>)</button>
+                            </div>
+                        </div>
+                        <div class="panel__body">
+                            <div class="import-results-list" id="importResultsList"></div>
+                        </div>
+                    </div>
+
+                    <!-- SINGLE ARTICLE PREVIEW -->
+                    <div class="panel" id="scrapeResultPanel" style="display:none;">
+                        <div class="panel__header"><h3><i class="fas fa-eye"></i> Preview do Artigo Extraído</h3><button class="btn btn--ghost btn--sm" id="closeScrapeResult"><i class="fas fa-times"></i></button></div>
+                        <div class="panel__body">
+                            <div class="scrape-preview" id="scrapePreview"></div>
+                            <div class="form-row" style="margin-top:1rem;">
+                                <div class="form-group">
+                                    <label>Categoria</label>
+                                    <select id="scrapeCategory"><option value="politica">Política</option><option value="economia">Economia</option><option value="tecnologia">Tecnologia</option><option value="saude">Saúde</option><option value="esportes">Esportes</option><option value="cultura">Cultura</option><option value="mundo">Mundo</option><option value="ciencia">Ciência</option><option value="educacao">Educação</option><option value="opiniao">Opinião</option></select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select id="scrapeStatus"><option value="draft">Rascunho</option><option value="published">Publicado</option><option value="featured">Destaque</option></select>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn--primary" id="importScrapeBtn"><i class="fas fa-download"></i> Importar como Notícia</button>
+                                <button class="btn btn--ghost" id="cancelScrapeBtn">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TIPS -->
+                    <div class="alert alert--info" style="margin-top:1rem;">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Dicas:</strong><br>
+                            • As notícias são importadas como <strong>Rascunho</strong> por padrão — revise antes de publicar.<br>
+                            • Imagens externas são referenciadas por URL (não são salvas localmente).<br>
+                            • Alguns sites podem bloquear acesso externo — nesse caso, tente outro feed.<br>
+                            • O campo "Fonte" é preenchido automaticamente com o site de origem.<br>
+                            • <strong>Respeite direitos autorais:</strong> use como referência e reescreva com suas palavras.
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ===== GENERATE PAGES ===== -->
+                <section class="admin-section" id="sec-generate-pages">
+                    <div class="panel">
+                        <div class="panel__header"><h3><i class="fas fa-file-code"></i> Gerar Páginas HTML de Artigos</h3></div>
+                        <div class="panel__body">
+                            <p class="text-muted">Gere arquivos HTML estáticos para cada notícia publicada. Os arquivos serão criados com URLs amigáveis (ex: <code>corinthians-campeao-supercopa.html</code>) e terão o visual completo do site, incluindo imagem importada.</p>
+                            <div class="alert alert--info" style="margin-bottom:1rem;">
+                                <i class="fas fa-info-circle"></i>
+                                <div>
+                                    <strong>Como funciona:</strong><br>
+                                    • Cada notícia publicada gera um arquivo <strong>.html</strong> independente<br>
+                                    • O arquivo usa o layout e CSS do portal<br>
+                                    • A imagem da notícia é embutida automaticamente<br>
+                                    • Links internos apontam para os slugs corretos
+                                </div>
+                            </div>
+                            <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;">
+                                <button class="btn btn--primary btn--lg" id="generateAllPagesBtn"><i class="fas fa-cogs"></i> Gerar Todas as Páginas</button>
+                                <span class="text-muted" id="generatePagesStatus"></span>
+                            </div>
+                            <div id="generatedPagesList" style="margin-top:1.5rem;"></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
