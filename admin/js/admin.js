@@ -1603,6 +1603,30 @@
     }
 
     function initGeneratePages() {
+        // Export news.json button
+        var exportBtn = $('#exportNewsJsonBtn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', function() {
+                var news = getStore(KEYS.news) || [];
+                var published = news.filter(function(n) { return n.status === 'published' || n.status === 'featured'; });
+
+                if (published.length === 0) {
+                    toast('Nenhuma notícia publicada para exportar.', 'warning');
+                    return;
+                }
+
+                // Ensure slugs
+                news.forEach(function(n) {
+                    if (!n.slug) n.slug = slugify(n.title);
+                });
+                setStore(KEYS.news, news);
+                published = news.filter(function(n) { return n.status === 'published' || n.status === 'featured'; });
+
+                downloadJSON(published, 'news.json');
+                toast(published.length + ' notícia(s) exportada(s) para news.json! Salve na pasta data/ do projeto e rode: node generate.js', 'success');
+            });
+        }
+
         var btn = $('#generateAllPagesBtn');
         if (!btn) return;
 

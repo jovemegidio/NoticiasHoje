@@ -393,7 +393,7 @@
 
     function articleUrl(n) {
         var slug = n.slug || slugify(n.title);
-        return slug + '.html';
+        return 'artigos/' + slug + '.html';
     }
 
     function timeAgo(dateStr) {

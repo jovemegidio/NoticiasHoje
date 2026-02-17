@@ -453,8 +453,19 @@
                                 </div>
                             </div>
                             <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;">
-                                <button class="btn btn--primary btn--lg" id="generateAllPagesBtn"><i class="fas fa-cogs"></i> Gerar Todas as Páginas</button>
+                                <button class="btn btn--success btn--lg" id="exportNewsJsonBtn"><i class="fas fa-file-export"></i> Exportar data/news.json</button>
+                                <button class="btn btn--primary btn--lg" id="generateAllPagesBtn"><i class="fas fa-cogs"></i> Gerar Todas as Páginas (download)</button>
                                 <span class="text-muted" id="generatePagesStatus"></span>
+                            </div>
+                            <div class="alert alert--warning" style="margin-top:1rem;">
+                                <i class="fas fa-terminal"></i>
+                                <div>
+                                    <strong>Geração automática via Node.js:</strong><br>
+                                    1. Clique em <strong>"Exportar data/news.json"</strong> para salvar suas notícias<br>
+                                    2. Coloque o arquivo na pasta <code>data/news.json</code> do projeto<br>
+                                    3. Execute no terminal: <code>node generate.js</code><br>
+                                    4. Os arquivos HTML serão criados na pasta <code>artigos/</code>
+                                </div>
                             </div>
                             <div id="generatedPagesList" style="margin-top:1.5rem;"></div>
                         </div>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "exemplo-1",
+    "slug": "corinthians-campeao-supercopa",
+    "title": "Corinthians é campeão da Supercopa do Brasil após vitória épica nos pênaltis",
+    "subtitle": "Timão vence o Palmeiras por 5x4 nas penalidades após empate em 2x2 no tempo normal e conquista título inédito.",
+    "content": "<p>O <strong>Sport Club Corinthians Paulista</strong> conquistou neste domingo a <strong>Supercopa do Brasil</strong> após uma final emocionante contra o Palmeiras, no Estádio Mané Garrincha, em Brasília.</p>\n<p>A partida terminou empatada em 2x2 no tempo normal, com gols de Yuri Alberto e Rodrigo Garro para o Corinthians, e Raphael Veiga e Estêvão para o Palmeiras.</p>\n<h2>Pênaltis dramáticos</h2>\n<p>Na disputa de pênaltis, o goleiro <strong>Hugo Souza</strong> foi o grande herói alvinegro, defendendo duas cobranças. O Corinthians converteu todas as suas cinco cobranças, vencendo por 5x4.</p>\n<blockquote>\"É o dia mais feliz da minha carreira. Esse título é do povo corinthiano que nunca deixou de acreditar.\"<br><br><strong>— Yuri Alberto, atacante do Corinthians</strong></blockquote>\n<h2>Festa da Fiel</h2>\n<p>Mais de 40 mil torcedores corinthianos presentes no estádio celebraram o título com muita emoção. A festa se estendeu pelas ruas de São Paulo, com caravanas saindo de diversas regiões do país.</p>\n<p>Com a conquista, o Corinthians garante vaga direta na fase de grupos da <strong>Copa Libertadores 2026</strong>.</p>",
+    "category": "esportes",
+    "author": "Carlos Mendes",
+    "source": "NotíciasHoje Esportes",
+    "date": "2026-02-15T20:30:00",
+    "image": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1000&h=560&fit=crop&q=85",
+    "tags": ["Corinthians", "Supercopa", "Futebol", "Palmeiras", "Esportes"],
+    "status": "published"
+  },
+  {
+    "id": "exemplo-2",
+    "slug": "inteligencia-artificial-revoluciona-medicina",
+    "title": "Inteligência artificial revoluciona diagnósticos médicos e detecta câncer com 99% de precisão",
+    "subtitle": "Novo sistema desenvolvido por pesquisadores brasileiros usa IA para identificar tumores em estágio inicial a partir de exames de imagem.",
+    "content": "<p>Pesquisadores da <strong>Universidade de São Paulo (USP)</strong> desenvolveram um sistema de inteligência artificial capaz de detectar tumores cancerígenos em estágio inicial com uma precisão de <strong>99,2%</strong>, superando a capacidade de diagnóstico humano.</p>\n<p>O sistema, batizado de <strong>OncoAI</strong>, analisa exames de tomografia e ressonância magnética em menos de 30 segundos, identificando padrões que muitas vezes passam despercebidos por radiologistas experientes.</p>\n<h2>Como funciona</h2>\n<p>A tecnologia utiliza redes neurais profundas treinadas com mais de <strong>2 milhões de imagens médicas</strong> de hospitais de todo o Brasil. O algoritmo consegue identificar 15 tipos diferentes de câncer, incluindo os de mama, pulmão, fígado e próstata.</p>\n<blockquote>\"Não se trata de substituir o médico, mas de oferecer uma ferramenta que potencializa sua capacidade de salvar vidas.\"<br><br><strong>— Dra. Ana Beatriz Lima, coordenadora do projeto</strong></blockquote>\n<h2>Próximos passos</h2>\n<p>O sistema já está em fase de testes em 12 hospitais públicos e a expectativa é que esteja disponível em toda a rede do <strong>SUS</strong> até o final de 2026.</p>",
+    "category": "tecnologia",
+    "author": "Fernanda Costa",
+    "source": "NotíciasHoje Tech",
+    "date": "2026-02-16T14:00:00",
+    "image": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1000&h=560&fit=crop&q=85",
+    "tags": ["IA", "Medicina", "Tecnologia", "Saúde", "USP", "Câncer"],
+    "status": "published"
+  },
+  {
+    "id": "exemplo-3",
+    "slug": "dolar-atinge-menor-cotacao-em-dois-anos",
+    "title": "Dólar atinge menor cotação em dois anos e fecha a R$ 4,52",
+    "subtitle": "Moeda americana recua com fluxo de investimentos estrangeiros e cenário fiscal positivo no Brasil.",
+    "content": "<p>O <strong>dólar comercial</strong> encerrou o pregão desta segunda-feira cotado a <strong>R$ 4,52</strong>, a menor cotação desde fevereiro de 2024. A queda de 1,8% na sessão foi impulsionada pelo forte fluxo de capital estrangeiro para o Brasil.</p>\n<h2>Motivos da queda</h2>\n<p>Segundo analistas do mercado financeiro, a combinação de fatores favoráveis explica o movimento:</p>\n<ul>\n<li><strong>Reforma tributária:</strong> A aprovação no Congresso trouxe confiança ao mercado</li>\n<li><strong>Juros atrativos:</strong> A taxa Selic a 9,5% continua atraindo investidores estrangeiros</li>\n<li><strong>Superávit primário:</strong> O governo registrou superávit de R$ 45 bilhões em janeiro</li>\n<li><strong>Commodities em alta:</strong> Preços do minério de ferro e soja beneficiam a balança comercial</li>\n</ul>\n<h2>Impacto no dia a dia</h2>\n<p>A queda do dólar tem impacto direto no preço de produtos importados e viagens internacionais. Eletrônicos, combustíveis e alimentos com insumos importados devem ficar mais baratos nas próximas semanas.</p>",
+    "category": "economia",
+    "author": "Roberto Almeida",
+    "source": "NotíciasHoje Economia",
+    "date": "2026-02-17T18:00:00",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1000&h=560&fit=crop&q=85",
+    "tags": ["Dólar", "Economia", "Câmbio", "Mercado Financeiro", "Investimentos"],
+    "status": "published"
+  }
+]
