@@ -45,7 +45,8 @@ function generateArticleHTML(article, allNews) {
     const cat = article.category || 'politica';
     const catLabel = catLabels[cat] || cat;
     const catClass = catTagClasses[cat] || 'tag--politics';
-    const d = article.date ? new Date(article.date) : new Date();
+    let d = article.date ? new Date(article.date) : new Date();
+    if (isNaN(d.getTime())) d = new Date(); // fallback for invalid dates
     const dateFormatted = d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' }) +
         ' às ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     const dateISO = d.toISOString();
@@ -344,36 +345,50 @@ function main() {
         process.exit(1);
     }
 
-    // Ensure slugs
-    published.forEach(n => {
-        if (!n.slug) n.slug = slugify(n.title);
+    // Ensure slugs and update original file
+    let slugsUpdated = false;
+    news.forEach(n => {
+        if (!n.slug) { n.slug = slugify(n.title); slugsUpdated = true; }
     });
+    if (slugsUpdated) {
+        fs.writeFileSync(DATA_FILE, JSON.stringify(news, null, 2), 'utf-8');
+        console.log('🔧 Slugs atualizados em data/news.json');
+    }
 
     // Create artigos directory
     if (!fs.existsSync(ARTICLES_DIR)) {
         fs.mkdirSync(ARTICLES_DIR, { recursive: true });
     }
 
-    console.log(`\n📰 ${published.length} notícia(s) publicada(s) encontrada(s)\n`);
+    console.log(`\n📰 ${published.length} notícia(s) publicada(s) encontrada(s) (total no JSON: ${news.length})\n`);
 
     let count = 0;
+    let errors = 0;
     published.forEach(article => {
-        const slug = article.slug || slugify(article.title);
-        const filename = slug + '.html';
-        const filepath = path.join(ARTICLES_DIR, filename);
+        try {
+            const slug = article.slug || slugify(article.title);
+            if (!slug) { console.warn('  ⚠️ Slug vazio para: ' + (article.title || 'sem título')); errors++; return; }
+            const filename = slug + '.html';
+            const filepath = path.join(ARTICLES_DIR, filename);
 
-        const html = generateArticleHTML(article, news);
-        fs.writeFileSync(filepath, html, 'utf-8');
+            const html = generateArticleHTML(article, news);
+            fs.writeFileSync(filepath, html, 'utf-8');
 
-        count++;
-        const cat = catLabels[article.category] || article.category || '?';
-        console.log(`  ✅ ${count}. artigos/${filename}`);
-        console.log(`     📂 ${cat} · ${article.title.substring(0, 60)}${article.title.length > 60 ? '...' : ''}`);
-        console.log('');
+            count++;
+            const cat = catLabels[article.category] || article.category || '?';
+            if (count <= 20 || count % 10 === 0) {
+                console.log(`  ✅ ${count}. artigos/${filename}`);
+                console.log(`     📂 ${cat} · ${article.title.substring(0, 60)}${article.title.length > 60 ? '...' : ''}`);
+            }
+        } catch(e) {
+            errors++;
+            console.warn(`  ❌ Erro ao gerar "${article.title || 'sem titulo'}": ${e.message}`);
+        }
     });
 
-    console.log('═'.repeat(50));
+    console.log('\n' + '═'.repeat(50));
     console.log(`\n🎉 ${count} página(s) gerada(s) na pasta artigos/`);
+    if (errors > 0) console.log(`⚠️ ${errors} erro(s) encontrado(s)`);
     console.log('\nPara visualizar, abra com um servidor local:');
     console.log('  npx http-server -p 8080 -c-1\n');
 }

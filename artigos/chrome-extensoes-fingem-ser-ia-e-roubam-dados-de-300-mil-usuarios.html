@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complementos que prometem assistentes inteligentes no Chrome escondem código malicioso e já foram instalados por mais de 300 mil pessoas.
+Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+    <meta name="theme-color" content="#D32F2F">
+    <meta name="author" content="Redação">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+    <meta property="og:description" content="Complementos que prometem assistentes inteligentes no Chrome escondem código malicioso e já foram instalados por mais de 300 mil pessoas.
+Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+    <meta property="og:image" content="https://files.tecnoblog.net/wp-content/uploads/2023/11/google-chrome-capa-2-340x191.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="NotíciasHoje">
+    <meta property="article:published_time" content="2026-02-13T00:59:00.000Z">
+    <meta property="article:section" content="Tecnologia">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+    <meta name="twitter:description" content="Complementos que prometem assistentes inteligentes no Chrome escondem código malicioso e já foram instalados por mais de 300 mil pessoas.
+Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+    <meta name="twitter:image" content="https://files.tecnoblog.net/wp-content/uploads/2023/11/google-chrome-capa-2-340x191.jpg">
+    <title>Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários — NotíciasHoje</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários",
+        "image": "https://files.tecnoblog.net/wp-content/uploads/2023/11/google-chrome-capa-2-340x191.jpg",
+        "datePublished": "2026-02-13T00:59:00.000Z",
+        "author": { "@type": "Person", "name": "Redação" },
+        "publisher": { "@type": "Organization", "name": "NotíciasHoje" },
+        "description": "Complementos que prometem assistentes inteligentes no Chrome escondem código malicioso e já foram instalados por mais de 300 mil pessoas.
+Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left">
+                <span class="topbar__date" id="currentDate"></span>
+                <span class="topbar__sep">|</span>
+                <span class="topbar__greeting" id="greeting"></span>
+            </div>
+            <div class="topbar__right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro"><i class="fas fa-moon"></i></button>
+                <a href="../index.html"><i class="far fa-bell"></i> Alertas</a>
+                <a href="../index.html"><i class="far fa-envelope"></i> Newsletter</a>
+                <a href="#"><i class="far fa-user"></i> Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="header__logo" aria-label="NotíciasHoje - Página inicial">
+                <div class="header__logo-mark"><span>NH</span></div>
+                <div class="header__logo-text"><strong>Notícias<span>Hoje</span></strong><small>Informação com credibilidade</small></div>
+            </a>
+            <div class="header__search" id="searchBar">
+                <form class="header__search-form" id="searchForm" role="search">
+                    <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off" aria-label="Campo de busca">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <button class="header__search-toggle" id="searchToggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="nav__list" id="navList" role="menubar">
+                <li role="none"><a href="../index.html" class="nav__link" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="../index.html#politica" class="nav__link" role="menuitem">Política</a></li>
+                <li role="none"><a href="../index.html#economia" class="nav__link" role="menuitem">Economia</a></li>
+                <li role="none"><a href="../index.html#tecnologia" class="nav__link active" role="menuitem">Tecnologia</a></li>
+                <li role="none"><a href="../index.html#saude" class="nav__link" role="menuitem">Saúde</a></li>
+                <li role="none"><a href="../index.html#esportes" class="nav__link" role="menuitem">Esportes</a></li>
+                <li role="none"><a href="../index.html#cultura" class="nav__link" role="menuitem">Cultura</a></li>
+                <li role="none"><a href="../index.html#mundo" class="nav__link" role="menuitem">Mundo</a></li>
+                <li role="none"><a href="../index.html#ciencia" class="nav__link" role="menuitem">Ciência</a></li>
+                <li role="none"><a href="../index.html#opiniao" class="nav__link" role="menuitem">Opinião</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="main" id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Início</a><span class="breadcrumb__sep">›</span>
+                <a href="../index.html#tecnologia">Tecnologia</a><span class="breadcrumb__sep">›</span>
+                <span>Chrome: extensões fingem ser IA e roubam dados de 300 mil us...</span>
+            </nav>
+
+            <div class="layout">
+                <article class="layout__main">
+                    <!-- ARTICLE HEADER -->
+                    <header class="article-header">
+                        <span class="tag tag--tech">Tecnologia</span>
+                        <h1>Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários</h1>
+                        <p class="article-subtitle">Complementos que prometem assistentes inteligentes no Chrome escondem código malicioso e já foram instalados por mais de 300 mil pessoas.
+Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários</p>
+                        <div class="article-meta">
+                            <div class="article-meta__author">
+                                <img src="https://i.pravatar.cc/80?u=Reda%C3%A7%C3%A3o" alt="Redação">
+                                <div><strong>Redação</strong><span>GON</span></div>
+                            </div>
+                            <time datetime="2026-02-13T00:59:00.000Z"><i class="far fa-clock"></i> 12 de fev. de 2026 às 21:59</time>
+                            <div class="article-share">
+                                <span>Compartilhar:</span>
+                                <button class="share-btn share-btn--whatsapp" data-share="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="share-btn share-btn--facebook" data-share="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="share-btn share-btn--twitter" data-share="twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></button>
+                                <button class="share-btn share-btn--telegram" data-share="telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></button>
+                                <button class="share-btn share-btn--copy" data-share="copy" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- COVER IMAGE -->
+                    <figure class="article-cover">
+                        <img src="https://files.tecnoblog.net/wp-content/uploads/2023/11/google-chrome-capa-2-340x191.jpg" alt="Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários">
+                        <figcaption>Foto: GON</figcaption>
+                    </figure>
+
+                    <!-- ARTICLE CONTENT -->
+                    <div class="article-content">
+                        
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c483ace9&quot;}" data-wp-interactive="core/image" data-wp-key="69947c483ace9" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2023/11/google-chrome-capa-2-1060x596.jpg" alt="Ilustração com a marca do Google Chrome" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Mais de 300 mil usuários instalaram extensões maliciosas no Chrome (Imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+<details >
+    <summary >Resumo</summary>
+    <div ><ul>
+<li>Mais de 300 mil usuários instalaram extensões maliciosas no Chrome, que se disfarçam de ferramentas de IA para roubar dados.</li>
+<li>A operação, batizada de AiFrame, envolve 30 extensões, que compartilham estrutura interna e backend comum, coletando dados de navegação e emails.</li>
+<li>Especialistas recomendam revisar extensões instaladas e redefinir senhas para evitar comprometimentos.</li>
+</ul>
+</div>
+</details>
+
+
+<p>Extensões de navegador que se apresentam como ferramentas de <a href="https://tecnoblog.net/responde/o-que-e-inteligencia-artificial/" >inteligência artificial</a> estão sendo usadas para roubar credenciais, conteúdos de email e dados de navegação de usuários. A campanha envolve ao menos 30 extensões maliciosas publicadas na Chrome Web Store, muitas delas disfarçadas como assistentes de IA, tradutores ou barras laterais inspiradas em serviços populares.</p>
+
+
+
+<p>A descoberta foi feita por pesquisadores da plataforma de segurança LayerX, que identificaram que todos os complementos fazem parte de uma mesma operação, batizada de AiFrame. Mesmo após a remoção de algumas extensões mais populares, outras continuam disponíveis para download e somam dezenas de milhares de instalações ativas.</p>
+
+
+
+<h2  ><strong>Como funcionam as extensões disfarçadas de IA?</strong></h2>
+
+
+
+<p>Segundo a LayerX, todas as extensões analisadas compartilham a mesma estrutura interna, permissões semelhantes e um backend comum, vinculado a um único domínio externo. Apesar de prometerem recursos avançados de IA, nenhuma delas executa processamento local de inteligência artificial.</p>
+
+
+
+<p>Na prática, essas extensões carregam, em tela cheia, um iframe que simula a funcionalidade prometida. Esse modelo permite que os responsáveis alterem o comportamento do complemento a qualquer momento, sem precisar submeter novas versões à revisão da loja do <a href="https://tecnoblog.net/responde/o-que-e-o-google-conheca-a-historia-e-os-produtos-da-empresa-de-tecnologia/" >Google</a>.</p>
+
+
+
+<p>Em segundo plano, o código passa a extrair o conteúdo das páginas visitadas pelo usuário, inclusive telas sensíveis de autenticação. Para isso, utiliza bibliotecas conhecidas para leitura de texto em páginas web. Em alguns casos, o foco é ainda mais específico: metade das extensões identificadas possui scripts dedicados ao <a href="https://tecnoblog.net/responde/como-colocar-aviso-de-ferias-no-gmail-resposta-automatica/" >Gmail</a>.</p>
+
+
+
+<p>Esses scripts são executados logo no início do carregamento do email e conseguem ler diretamente o conteúdo visível das mensagens. Isso inclui textos completos de conversas e até rascunhos ainda não enviados. Quando funções supostamente ligadas à IA são acionadas, esses dados acabam sendo enviados para servidores externos controlados pelos operadores do esquema.</p>
+
+
+
+<p>Confira os nomes de algumas extensão identificadas pelo site especializado <em><a href="https://www.bleepingcomputer.com/news/security/fake-ai-chrome-extensions-with-300k-users-steal-credentials-emails/" target="_blank" >Bleeping Computer</a></em>, seguidos da identificação na loja do Chrome:</p>
+
+
+
+<ol >
+<li><strong>AI Sidebar</strong>&nbsp;(gghdfkafnhfpaooiolhncejnlgglhkhe)</li>
+
+
+
+<li><strong>AI Assistant</strong>&nbsp;(nlhpidbjmmffhoogcennoiopekbiglbp)</li>
+
+
+
+<li><strong>ChatGPT Translate</strong>&nbsp;(acaeafediijmccnjlokgcdiojiljfpbe)</li>
+
+
+
+<li><strong>AI GPT&nbsp;</strong>(kblengdlefjpjkekanpoidgoghdngdgl)</li>
+
+
+
+<li><strong>ChatGPT&nbsp;</strong>(llojfncgbabajmdglnkbhmiebiinohek)</li>
+
+
+
+<li><strong>AI Sidebar</strong>&nbsp;(djhjckkfgancelbmgcamjimgphaphjdl)</li>
+
+
+
+<li><strong>Google Gemini</strong>&nbsp;(fdlagfnfaheppaigholhoojabfaapnhb)</li>
+</ol>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c483bb29&quot;}" data-wp-interactive="core/image" data-wp-key="69947c483bb29" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2023/01/seguranca-capa-8-1060x596.png" alt="Imagem mostra um cadeado azul fechado, centralizado sobre um fundo abstrato em tons de cinza e azul claro, com formas geométricas que sugerem tecnologia e segurança digital. No canto inferior direito, a marca d'água &quot;Tecnoblog&quot; é visível." /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Extensões maliciosas podiam capturar credenciais e conteúdo de e-mails (ilustração: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  ><strong>Quais dados podem ser capturados dos usuários?</strong></h2>
+
+
+
+<p>O alcance da coleta vai além de emails. Dependendo das permissões concedidas, algumas extensões ativam recursos de reconhecimento de voz por meio da Web Speech API, gerando transcrições que também são enviadas aos servidores remotos.</p>
+
+
+
+<p>A LayerX resume o risco de forma direta: “o texto das mensagens de email e dados contextuais relacionados podem ser enviados para fora do dispositivo, fora do limite de segurança do Gmail, para servidores remotos”.</p>
+
+
+
+<p>Especialistas recomendam que usuários revisem extensões instaladas, removam qualquer complemento suspeito e redefinam senhas caso identifiquem sinais de comprometimento. A <em>Bleeping Computer</em> entrou em contato com o Google, mas, até a publicação desta matéria, a empresa ainda não havia se pronunciado.</p>
+<p><a href="https://tecnoblog.net/noticias/chrome-extensoes-fingem-ser-ia-e-roubam-dados-de-300-mil-usuarios/">Chrome: extensões fingem ser IA e roubam dados de 300 mil usuários</a></p>
+
+<p><em>Fonte original: <a href="https://tecnoblog.net/noticias/chrome-extensoes-fingem-ser-ia-e-roubam-dados-de-300-mil-usuarios/" target="_blank" rel="noopener">GON</a></em></p>
+                    </div>
+
+                    <!-- TAGS -->
+                    <div class="article-tags">
+                        <a href="index.html#tecnologia" class="article-tag">GON</a>
+                        <a href="index.html#tecnologia" class="article-tag">tecnologia</a>
+                    </div>
+
+                    <!-- SHARE BOTTOM -->
+                    <div class="article-meta" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: var(--sp-6);">
+                        <div class="article-share" style="margin-left: 0;">
+                            <span>Compartilhar esta matéria:</span>
+                            <button class="share-btn share-btn--whatsapp" data-share="whatsapp"><i class="fab fa-whatsapp"></i></button>
+                            <button class="share-btn share-btn--facebook" data-share="facebook"><i class="fab fa-facebook-f"></i></button>
+                            <button class="share-btn share-btn--twitter" data-share="twitter"><i class="fab fa-x-twitter"></i></button>
+                            <button class="share-btn share-btn--telegram" data-share="telegram"><i class="fab fa-telegram"></i></button>
+                            <button class="share-btn share-btn--copy" data-share="copy"><i class="fas fa-link"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- RELATED -->
+                    <section class="related">
+                        <h3>Leia também</h3>
+                        <div class="card-grid card-grid--3">
+                            <article class="card">
+                                <a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="card__link">
+                                    <div class="card__img"><img src="https://static6.odiariodemogi.net.br/wp-content/uploads/2026/02/Rabada-com-agriao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Como preparar rabada: 5 receitas simples para o dia a dia</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="card__link">
+                                    <div class="card__img"><img src="https://static3.odiariodemogi.net.br/wp-content/uploads/2025/06/image-3.png" alt="" loading="lazy"><span class="tag tag--politics">Política</span></div>
+                                    <div class="card__body"><h3>DER ativa novo radar na Mogi-Guararema; veja local</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="card__link">
+                                    <div class="card__img"><img src="https://static5.odiariodemogi.net.br/wp-content/uploads/2026/02/Feng-shui-ano-do-cavalo-decoracao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</h3></div>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar" aria-label="Conteúdo complementar">
+                    <div class="widget widget--trending">
+                        <h3 class="widget__title"><i class="fas fa-fire-flame-curved"></i> Mais Lidas</h3>
+                        <ol class="trending">
+                            <li class="trending__item"><span class="trending__rank">1</span><a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="trending__link">Como preparar rabada: 5 receitas simples para o dia a dia</a></li>
+                            <li class="trending__item"><span class="trending__rank">2</span><a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="trending__link">DER ativa novo radar na Mogi-Guararema; veja local</a></li>
+                            <li class="trending__item"><span class="trending__rank">3</span><a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="trending__link">Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</a></li>
+                            <li class="trending__item"><span class="trending__rank">4</span><a href="artigos/7-grupos-de-alimentos-que-fazem-bem-para-o-cerebro.html" class="trending__link">7 grupos de alimentos que fazem bem para o cérebro</a></li>
+                            <li class="trending__item"><span class="trending__rank">5</span><a href="artigos/agua-de-coco-emagrece-veja-4-mitos-e-verdade-sobre-o-consumo-da-bebida.html" class="trending__link">Água de coco emagrece? Veja 4 mitos e verdade sobre o consumo da bebida</a></li>
+                        </ol>
+                    </div>
+                    <div class="ad-banner ad-banner--sidebar"><div class="ad-placeholder ad-placeholder--tall"><span>Publicidade</span></div></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo"><div class="header__logo-mark"><span>NH</span></div><strong>Notícias<span>Hoje</span></strong></a>
+                    <p>Jornalismo sério, imparcial e comprometido com a verdade.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col"><h4>Editorias</h4><ul><li><a href="../index.html#politica">Política</a></li><li><a href="../index.html#economia">Economia</a></li><li><a href="../index.html#tecnologia">Tecnologia</a></li><li><a href="../index.html#esportes">Esportes</a></li><li><a href="../index.html#cultura">Cultura</a></li><li><a href="../index.html#ciencia">Ciência</a></li></ul></div>
+                    <div class="footer__col"><h4>Portal</h4><ul><li><a href="../sobre.html">Sobre o NH</a></li><li><a href="../expediente.html">Expediente</a></li><li><a href="../privacidade.html">Privacidade</a></li><li><a href="../termos.html">Termos de Uso</a></li><li><a href="../etica.html">Código de Ética</a></li><li><a href="../anuncie.html">Anuncie</a></li></ul></div>
+                    <div class="footer__col"><h4>Contato</h4><ul><li><a href="mailto:contato@noticiashoje.com.br"><i class="far fa-envelope"></i> contato@noticiashoje.com.br</a></li><li><a href="tel:+551130000000"><i class="fas fa-phone"></i> (11) 3000-0000</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 NotíciasHoje. Todos os direitos reservados.</p>
+                <div class="footer__badges"><span><i class="fas fa-shield-halved"></i> Site Seguro</span><span><i class="fas fa-check-circle"></i> Jornalismo Verificado</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="btt" id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+        <div class="cookie-banner__inner">
+            <div class="cookie-banner__text"><i class="fas fa-cookie-bite"></i><p>Utilizamos cookies. Ao continuar, você concorda com nossa <a href="../privacidade.html">Política de Privacidade</a>.</p></div>
+            <div class="cookie-banner__actions"><button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceitar</button><button class="cookie-btn cookie-btn--reject" id="cookieReject">Rejeitar</button></div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

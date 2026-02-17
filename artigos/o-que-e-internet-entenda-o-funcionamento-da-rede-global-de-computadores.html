@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A internet é uma plataforma global para conectar pessoas, facilitar o acesso à informação e educação, além de permitir o comércio eletrônico
+O que é internet? Entenda o funcionamento da rede global de computadores">
+    <meta name="theme-color" content="#D32F2F">
+    <meta name="author" content="Redação">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="O que é internet? Entenda o funcionamento da rede global de computadores">
+    <meta property="og:description" content="A internet é uma plataforma global para conectar pessoas, facilitar o acesso à informação e educação, além de permitir o comércio eletrônico
+O que é internet? Entenda o funcionamento da rede global de computadores">
+    <meta property="og:image" content="https://files.tecnoblog.net/wp-content/uploads/2026/02/growtika-unsplash-340x191.jpg">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="NotíciasHoje">
+    <meta property="article:published_time" content="2026-02-16T23:20:00.000Z">
+    <meta property="article:section" content="Educação">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O que é internet? Entenda o funcionamento da rede global de computadores">
+    <meta name="twitter:description" content="A internet é uma plataforma global para conectar pessoas, facilitar o acesso à informação e educação, além de permitir o comércio eletrônico
+O que é internet? Entenda o funcionamento da rede global de computadores">
+    <meta name="twitter:image" content="https://files.tecnoblog.net/wp-content/uploads/2026/02/growtika-unsplash-340x191.jpg">
+    <title>O que é internet? Entenda o funcionamento da rede global de computadores — NotíciasHoje</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "O que é internet? Entenda o funcionamento da rede global de computadores",
+        "image": "https://files.tecnoblog.net/wp-content/uploads/2026/02/growtika-unsplash-340x191.jpg",
+        "datePublished": "2026-02-16T23:20:00.000Z",
+        "author": { "@type": "Person", "name": "Redação" },
+        "publisher": { "@type": "Organization", "name": "NotíciasHoje" },
+        "description": "A internet é uma plataforma global para conectar pessoas, facilitar o acesso à informação e educação, além de permitir o comércio eletrônico
+O que é internet? Entenda o funcionamento da rede global de computadores"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left">
+                <span class="topbar__date" id="currentDate"></span>
+                <span class="topbar__sep">|</span>
+                <span class="topbar__greeting" id="greeting"></span>
+            </div>
+            <div class="topbar__right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro"><i class="fas fa-moon"></i></button>
+                <a href="../index.html"><i class="far fa-bell"></i> Alertas</a>
+                <a href="../index.html"><i class="far fa-envelope"></i> Newsletter</a>
+                <a href="#"><i class="far fa-user"></i> Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="header__logo" aria-label="NotíciasHoje - Página inicial">
+                <div class="header__logo-mark"><span>NH</span></div>
+                <div class="header__logo-text"><strong>Notícias<span>Hoje</span></strong><small>Informação com credibilidade</small></div>
+            </a>
+            <div class="header__search" id="searchBar">
+                <form class="header__search-form" id="searchForm" role="search">
+                    <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off" aria-label="Campo de busca">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <button class="header__search-toggle" id="searchToggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="nav__list" id="navList" role="menubar">
+                <li role="none"><a href="../index.html" class="nav__link" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="../index.html#politica" class="nav__link" role="menuitem">Política</a></li>
+                <li role="none"><a href="../index.html#economia" class="nav__link" role="menuitem">Economia</a></li>
+                <li role="none"><a href="../index.html#tecnologia" class="nav__link" role="menuitem">Tecnologia</a></li>
+                <li role="none"><a href="../index.html#saude" class="nav__link" role="menuitem">Saúde</a></li>
+                <li role="none"><a href="../index.html#esportes" class="nav__link" role="menuitem">Esportes</a></li>
+                <li role="none"><a href="../index.html#cultura" class="nav__link" role="menuitem">Cultura</a></li>
+                <li role="none"><a href="../index.html#mundo" class="nav__link" role="menuitem">Mundo</a></li>
+                <li role="none"><a href="../index.html#ciencia" class="nav__link" role="menuitem">Ciência</a></li>
+                <li role="none"><a href="../index.html#opiniao" class="nav__link" role="menuitem">Opinião</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="main" id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Início</a><span class="breadcrumb__sep">›</span>
+                <a href="../index.html#educacao">Educação</a><span class="breadcrumb__sep">›</span>
+                <span>O que é internet? Entenda o funcionamento da rede global de ...</span>
+            </nav>
+
+            <div class="layout">
+                <article class="layout__main">
+                    <!-- ARTICLE HEADER -->
+                    <header class="article-header">
+                        <span class="tag tag--education">Educação</span>
+                        <h1>O que é internet? Entenda o funcionamento da rede global de computadores</h1>
+                        <p class="article-subtitle">A internet é uma plataforma global para conectar pessoas, facilitar o acesso à informação e educação, além de permitir o comércio eletrônico
+O que é internet? Entenda o funcionamento da rede global de computadores</p>
+                        <div class="article-meta">
+                            <div class="article-meta__author">
+                                <img src="https://i.pravatar.cc/80?u=Reda%C3%A7%C3%A3o" alt="Redação">
+                                <div><strong>Redação</strong><span>GON</span></div>
+                            </div>
+                            <time datetime="2026-02-16T23:20:00.000Z"><i class="far fa-clock"></i> 16 de fev. de 2026 às 20:20</time>
+                            <div class="article-share">
+                                <span>Compartilhar:</span>
+                                <button class="share-btn share-btn--whatsapp" data-share="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="share-btn share-btn--facebook" data-share="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="share-btn share-btn--twitter" data-share="twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></button>
+                                <button class="share-btn share-btn--telegram" data-share="telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></button>
+                                <button class="share-btn share-btn--copy" data-share="copy" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- COVER IMAGE -->
+                    <figure class="article-cover">
+                        <img src="https://files.tecnoblog.net/wp-content/uploads/2026/02/growtika-unsplash-340x191.jpg" alt="O que é internet? Entenda o funcionamento da rede global de computadores">
+                        <figcaption>Foto: GON</figcaption>
+                    </figure>
+
+                    <!-- ARTICLE CONTENT -->
+                    <div class="article-content">
+                        
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c4718a7d&quot;}" data-wp-interactive="core/image" data-wp-key="69947c4718a7d" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2026/02/growtika-unsplash-1060x596.jpg" alt="ilustração sobre internet" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Entenda o conceito de internet e como ela funciona (imagem: Growtika/Unsplash)</figcaption></figure>
+
+
+
+<p>A internet é uma rede de computadores global baseada no protocolo padronizado TCP/IP, que conecta bilhões de dispositivos ao redor do mundo. Essa infraestrutura integra sistemas públicos e privados, servindo como a base essencial para a navegação na web e a troca de dados.</p>
+
+
+
+<p>Para funcionar, a rede divide as informações em pacotes de dados que trafegam por cabos submarinos, fibras ópticas ou sinais de satélite até o destino. Então, o protocolo IP identifica cada dispositivo de forma única, enquanto o TCP garante que os dados cheguem completos e na ordem correta.</p>
+
+
+
+<p>Existem diferentes tecnologias de acesso à internet, como a fibra óptica para estabilidade, o 4G/5G para mobilidade e satélite ou rádio para áreas fora dos centros urbanos. Para acessar a rede, o usuário necessita de um provedor de serviço de internet (ISP) para mantê-lo online.</p>
+
+
+
+<p>A seguir, conheça mais sobre o conceito de internet, como a rede de computadores surgiu e quem controla a tecnologia. Também saiba as vantagens e desvantagens do seu uso no dia a dia.</p>
+
+
+
+<div ><h2>Índice</h2><ul><li><a href="#h-o-que-e-internet" data-level="2">O que é internet?</a><ul><li><a href="#h-o-que-significa-internet" data-level="3">O que significa internet?</a></li></ul></li><li><a href="#h-para-que-serve-a-internet" data-level="2">Para que serve a internet?</a></li><li><a href="#h-como-funciona-a-internet" data-level="2">Como funciona a internet</a><ul><li><a href="#h-o-que-e-preciso-para-acessar-a-internet" data-level="3">O que é preciso para acessar a internet?</a></li></ul></li><li><a href="#h-como-a-internet-surgiu" data-level="2">Como a internet surgiu</a></li><li><a href="#h-quais-sao-os-tipos-de-internet" data-level="2">Quais são os tipos de internet?</a></li><li><a href="#h-quem-controla-a-internet" data-level="2">Quem controla a internet?</a><ul><li><a href="#h-quem-oferece-servicos-de-internet" data-level="3">Quem oferece serviços de internet?</a></li></ul></li><li><a href="#h-quais-sao-as-vantagens-da-internet" data-level="2">Quais são as vantagens da internet?</a></li><li><a href="#h-quais-sao-as-desvantagens-da-internet" data-level="2">Quais são as desvantagens da internet?</a></li><li><a href="#h-qual-e-a-diferenca-entre-internet-e-intranet" data-level="2">Qual é a diferença entre internet e intranet?</a></li><li><a href="#h-qual-e-a-diferenca-entre-internet-e-world-wide-web" data-level="2">Qual é a diferença entre internet e World Wide Web?</a></li><li><a href="#h-qual-e-a-diferenca-entre-internet-e-wi-fi" data-level="2">Qual é a diferença entre internet e Wi-Fi?</a></li></ul></div>
+
+
+
+<h2  >O que é internet?</h2>
+
+
+
+<p>A internet é uma infraestrutura de redes interconectadas globalmente que usa o conjunto de protocolos de comunicação TCP/IP para padronizar a comunicação e a troca de dados. Ela integra dispositivos e sistemas privados, públicos e governamentais ao redor do mundo por meio de diferentes tecnologias de transmissão.</p>
+
+
+
+<h3  >O que significa internet?</h3>
+
+
+
+<p>O termo “internet” surge da união das palavras “inter” (entre) e “network” (rede). Usada pela ARPANET durante o desenvolvimento da rede nos anos 1960 e 1970, a palavra descreve a interconexão e a troca de dados entre diferentes sistemas computacionais.</p>
+
+
+
+<h2  >Para que serve a internet?</h2>
+
+
+
+<p>A internet atua como uma infraestrutura global que conecta bilhões de dispositivos, permitindo a comunicação instantânea e o compartilhamento irrestrito de dados. Ela democratiza o conhecimento ao oferecer acesso a acervos educacionais, notícias e serviços essenciais de utilidade pública.</p>
+
+
+
+<p>No contexto econômico, a rede apoia o comércio eletrônico, operações bancárias e novas modalidades de trabalho, como o regime remoto e colaborativo. Além disso, ela viabiliza o armazenamento em nuvem, garantindo segurança e mobilidade para a gestão de arquivos pessoais e corporativos.</p>
+
+
+
+<p>O ecossistema digital também é essencial para o entretenimento moderno, suportando plataformas de streaming, jogos online e redes sociais. Por meio da Internet das Coisas (IoT), ela integra objetos do cotidiano à rede, otimizando a automação e a eficiência tecnológica.</p>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c4719548&quot;}" data-wp-interactive="core/image" data-wp-key="69947c4719548" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2024/10/capa-tcp-ip-tbr-1060x596.png" alt="Ilustração sobre o protocolo TCP/IP" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Os procolos TCP/IP são essenciais para o funcionamento da Internet (imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  >Como funciona a internet</h2>
+
+
+
+<p>A internet opera como uma infraestrutura global de redes que transportam dados via pacotes por diversos meios. As informações, como a solicitação de acesso a um site, são fragmentadas em pequenas unidades que viajam de forma independente por cabos, fibras ópticas ou satélites até o destino.</p>
+
+
+
+<p>Então, o conjunto de protocolos <a href="https://tecnoblog.net/responde/o-que-e-tcp-ip/" type="link" >TCP/IP</a> padroniza a comunicação entre diferentes sistemas. Enquanto o Transmission Control Protocol (TCP) garante que os dados cheguem íntegros e na ordem correta, o <a href="https://tecnoblog.net/responde/o-que-e-ip/" type="link" >Internet Protocol (IP)</a> define as regras de roteamento e endereçamento.</p>
+
+
+
+<p>Cada dispositivo conectado à internet possui um endereço IP exclusivo, permitindo que roteadores identifiquem a origem e o destino exatos. Essa identificação numérica é essencial para que os pacotes de dados não se percam durante o tráfego em redes públicas.</p>
+
+
+
+<p>O sistema de nomes de domínio (DNS) traduz nomes de sites em números de IP, facilitando a navegação humana sem a necessidade de memorizar códigos. Ao final do percurso, o navegador do usuário recompila todos os fragmentos recebidos para exibir o conteúdo original solicitado.</p>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c4719ac3&quot;}" data-wp-interactive="core/image" data-wp-key="69947c4719ac3" ><img decoding="async" width="800" height="400" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2026/02/internet_modes_of_connection.webp" alt="infográfico sobre o funcionamento da internet" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Funcionamento da Internet (imagem: Reprodução/Geeks For Geeks)</figcaption></figure>
+
+
+
+<h3  >O que é preciso para acessar a internet?</h3>
+
+
+
+<p>Para acessar a internet, é essencial o uso de um dispositivo, como computador ou smartphone, que possua uma interface de rede integrada. Além do hardware, deve-se estabelecer uma conexão física ou sem fio via cabos de rede, Wi-Fi ou dados móveis.</p>
+
+
+
+<p>É necessário contratar um Provedor de Serviço de Internet (ISP) que forneça o sinal digital por meio de tecnologias como fibra óptica, cabo coaxial ou satélite. Este serviço usa um modem ou roteador para decodificar os dados e distribuí-los aos aparelhos locais.</p>
+
+
+
+<p>Na parte de software, o sistema operacional deve estar pronto para executar navegadores ou aplicativos que interpretem os dados da rede. O desempenho ideal também depende da configuração de memória do dispositivo e do uso de programas atualizados e seguros.</p>
+
+
+
+<h2  >Como a internet surgiu</h2>
+
+
+
+<p>A internet nasceu de projetos da ARPANET, agência do Departamento de Defesa dos EUA, durante a Guerra Fria, visando criar uma rede descentralizada que resistisse a falhas catastróficas. Em 1969, a primeira mensagem foi enviada entre universidades inaugurando a tecnologia de comutação de pacotes para tráfego de dados.</p>
+
+
+
+<p>Bob Kahn e Vint Cert, cientistas da computação considerados dos vários <a href="https://tecnoblog.net/responde/quem-criou-a-internet-conheca-a-historia-do-surgimento-da-rede-mundial-de-computadores/" type="link" >criadores da internet</a>, desenvolveram o protocolo TCP/IP, que permitiu a conexão de diferentes redes em 1983. Esse padrão técnico unificou a linguagem digital, possibilitando que computadores de diversos fabricantes conversassem eficientemente.</p>
+
+
+
+<p>Em 1989, Tim Berners-Lee criou a World Wide Web (WWW) na CERN, introduzindo o HTML e os hiperlinks. Essa camada de navegação tornou a informação acessível ao público leigo, transformando códigos complexos em páginas visuais e interativas.</p>
+
+
+
+<p>A abertura comercial nos anos 1990 e o surgimento de navegadores populares como Mosaic e Internet Explorer permitiram a expansão massiva da rede mundial de computadores. Atualmente, essa infraestrutura evoluiu para um ecossistema global indispensável, conectando bilhões de usuários e dispositivos em tempo real.</p>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c471a0d1&quot;}" data-wp-interactive="core/image" data-wp-key="69947c471a0d1" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2025/01/capa-tbr-quem-criou-a-internet-1060x596.png" alt="Ilustração com imagens dos cientistas que ajudaram a criar a internet" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Diversos cientistas e engenheiros contribuíram com a criação da internet (imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  >Quais são os tipos de internet?</h2>
+
+
+
+<p>Existem diferentes <a href="https://tecnoblog.net/responde/quem-criou-a-internet-conheca-a-historia-do-surgimento-da-rede-mundial-de-computadores/#h-qual-e-a-diferenca-entre-a-internet-comum-e-a-deep-web" type="link" >tipos de internet</a> global, cada uma usando uma tecnologia para conectar os dispositivos a grande rede:</p>
+
+
+
+<ul >
+<li><strong>Banda larga:</strong> padrão de alta velocidade que transmite voz, vídeo e dados simultaneamente. Oferece navegação fluida, com velocidade que variam de 5 Mbps a 10 Gbps;</li>
+
+
+
+<li><strong>Fibra óptica:</strong> utiliza pulsos de luz em filamentos de vidro para máxima velocidade e estabilidade. É a tecnologia mais avançada do mercado, ideal para quem precisa de baixíssima latência;</li>
+
+
+
+<li><strong>Cabo coaxial:</strong> aproveita a infraestrutura das redes de TV a cabo para transmitir dados digitais com boa velocidade. É comum em centros urbanos, embora possa sofrer oscilações em horários de alta demanda;</li>
+
+
+
+<li><strong>ADSL:</strong> usa os fios de cobre da rede de telefone para levar o sinal de banda larga de forma acessível. A velocidade de download é muito maior que a de upload, podendo ser reduzida conforme a distância entre a residência e a central;</li>
+
+
+
+<li><strong>Via satélite:</strong> comunica-se diretamente com satélites em órbita, sendo a solução indicada para áreas remotas. Possui latência mais elevada e o sinal pode ser afetado por condições climáticas severas, como chuvas fortes;</li>
+
+
+
+<li><strong>Via rádio:</strong> transmite dados entre torres de distribuição e antenas instaladas no topo das edificações. É muito utilizada em cidades pequenas, mas exige a ausência de obstáculos físicos entre a residência e a antena para funcionar bem;</li>
+
+
+
+<li><strong>Internet móvel (4G/5G):</strong> conecta dispositivos via ondas de rádio emitidas por torres de celular, garantindo portabilidade total. O 5G oferece velocidades comparáveis à fibra, mas depende da densidade de antenas;</li>
+
+
+
+<li><strong>PLC (Power-Line Communication):</strong> transmite sinal de internet por meio da fiação elétrica interna da residência ou prédio. Facilita a expansão da rede sem reformas, mas é suscetível a ruídos causados por eletrodomésticos;</li>
+
+
+
+<li><strong>5G FWA:</strong> utiliza o sinal 5G para fornecer internet residencial de alto desempenho sem a necessidade de cabos. É uma solução ágil para locais onde a infraestrutura de fibra ainda não chegou;</li>
+
+
+
+<li><strong>Internet discada:</strong> tecnologia obsoleta que conectava computadores por meio de uma linha telefônica fixa. Era extremamente lenta e ocupava a linha durante o uso.</li>
+</ul>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c471a757&quot;}" data-wp-interactive="core/image" data-wp-key="69947c471a757" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2025/08/tbr-tipos-de-internet-01-1060x596.png" alt="ilustração sobre tipos internet" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Existem diferentes tipos de conexão de internet disponíveis comercialmente (imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  >Quem controla a internet?</h2>
+
+
+
+<p>A internet é uma rede descentralizada e global que não possui um proprietário único ou controle centralizado. Ela é gerida colaborativamente entre governos, setor privado, sociedade civil e comunidade técnica.</p>
+
+
+
+<p>A Internet Corporation for Assigned Names and Numbers (ICANN) coordena sistemas como nomes de domínio e endereços, enquanto o Internet Engineering Task Force (IETF) define padrões técnicos de comunicação. Em paralelo, os Registros Regionais da Internet (RIR) alocam blocos de IP regionalmente para assegurar a conectividade.</p>
+
+
+
+<p>Embora a infraestrutura técnica seja gerida por essas entidades, empresas de <a href="https://tecnoblog.net/responde/o-que-sao-telecomunicacoes-entenda-a-importancia-da-telecom-e-confira-os-servicos-cobertos/" type="link" >telecom</a> controlam os cabos físicos e roteadores. Assim, a estabilidade da rede de internet depende da cooperação mútua entre todos esses agentes.</p>
+
+
+
+<h3  >Quem oferece serviços de internet?</h3>
+
+
+
+<p>Os provedores de acesso à internet (ISP) são os responsáveis por conectar os usuários à rede global por meio de tecnologias como fibra óptica, redes móveis e satélites. Essas empresas garantem o tráfego de dados necessário para atividades digitais cotidianas.</p>
+
+
+
+<p>No Brasil, operadoras de grande porte como Vivo, Claro e TIM lideram a cobertura nacional em banda larga e redes móveis. Paralelamente, provedores regionais, como Brisanet e Unifique, diversificam o mercado oferecendo soluções focadas em localidades específicas.</p>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c471ad60&quot;}" data-wp-interactive="core/image" data-wp-key="69947c471ad60" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2024/05/capa-claro-tim-vivo_tb-3-1060x596.png" alt="Ilustração mostra o logotipo das marcas Claro, Vivo e TIM lado a lado. Na parte inferior direita, o logitpo do &quot;tecnoblog&quot; é visível." /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >Claro, TIM e Vivo são as maiores operadoras de telefonia e internet do país (imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  >Quais são as vantagens da internet?</h2>
+
+
+
+<p>A internet transformou profundamente as formas de comunicação, otimizando processos e eliminando barreiras físicas. Alguns pontos fortes da tecnologia são:</p>
+
+
+
+<ul >
+<li><strong>Comunicação instantânea:</strong> facilita a interação global em tempo real por meio de mensagens e chamadas, mantendo o fluxo de informações constante entre indivíduos e empresas;</li>
+
+
+
+<li><strong>Acesso ilimitado à informação:</strong> disponibiliza um vasto volume de dados e pesquisas instantâneas, servindo como uma “biblioteca universal” para os usuários;</li>
+
+
+
+<li><strong>Democratização da educação:</strong> viabiliza o ensino à distância e cursos especializados, permitindo que o conhecimento esteja disponível para pessoas em qualquer localização geográfica com custo reduzido;</li>
+
+
+
+<li><strong>Flexibilidade no trabalho:</strong> consolida o modelo de trabalho remoto ou híbrido, aumentando a qualidade de vida do funcionário e reduzindo custos operacionais para as organizações;</li>
+
+
+
+<li><strong>Expansão e inovação econômica:</strong> impulsiona o comércio eletrônico e modelos de negócios digitais, permitindo que empresas de grande porte e pequenos empreendedores escalem sua atuação globalmente;</li>
+
+
+
+<li><strong>Avanços na telemedicina:</strong> melhora o suporte à saúde por meio de consultas remotas e monitoramento digital, garantindo atendimento ágil até para populações em áreas remotas;</li>
+
+
+
+<li><strong>Entretenimento e cultura digital:</strong> oferece acesso imediato a streaming de vídeos, músicas e jogos, substituindo mídias físicas por bibliotecas digitais personalizadas e sob demanda;</li>
+
+
+
+<li><strong>Modernização do setor de tecnologia:</strong> garante a infraestrutura necessária para a integração de dispositivos inteligentes (IoT), otimizando a automação de residências e indústrias modernas;</li>
+
+
+
+<li><strong>Desburocratização governamental:</strong> digitaliza serviços públicos e processos cívicos, permitindo que cidadãos resolvam questões administrativas.</li>
+</ul>
+
+
+
+<h2  >Quais são as desvantagens da internet?</h2>
+
+
+
+<p>Embora seja uma ferramenta indispensável, o uso da internet acarreta riscos que afetam a segurança e a saúde dos usuários e até mesmo o equilíbrio social. Por exemplo:</p>
+
+
+
+<ul >
+<li><strong>Riscos de cibersegurança:</strong> hackers exploram vulnerabilidades técnicas para roubar dados bancários e espalhar vírus, causando prejuízos financeiros e fraudes de identidade;</li>
+
+
+
+<li><strong>Disseminação de desinformação:</strong> a rapidez na propagação de fake news compromete o senso crítico da sociedade, influenciando perigosamente decisões políticas e comportamentais;</li>
+
+
+
+<li><strong>Bolhas de filtro e polarização:</strong> <a href="https://reutersinstitute.politics.ox.ac.uk/echo-chambers-filter-bubbles-and-polarisation-literature-review" type="link"  target="_blank" >estudos analisados pela Reuters Institute</a> indicam que algoritmos de recomendação da internet e redes sociais podem confinar usuários em nichos de pensamento, dificultando o diálogo e aumentando a intolerância ideológica;</li>
+
+
+
+<li><strong>Exposição a conteúdos impróprios:</strong> uma <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12007062/" type="link"  target="_blank"  rel="nofollow noopener">pesquisa realizada no Centro de Pediatria de Leipzig</a>, na Alemanha, aponta que a dificuldade de filtragem expõe menores de idade a materiais violentos ou sexualmente explícitos, prejudicando o desenvolvimento infantil;</li>
+
+
+
+<li><strong>Degradação da privacidade:</strong> a coleta massiva de metadados por plataformas digitais expõe a vida íntima dos usuários a vazamentos, vigilância indesejada e publicidade invasiva;</li>
+
+
+
+<li><strong>Impactos na saúde mental:</strong> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7785056/" type="link"  target="_blank"  rel="nofollow noopener">estudos realizados na Ásia e nos EUA</a> revelam que o uso excessivo da internet está vinculado a quadros de ansiedade, depressão e vício digital, muitas vezes alimentados pela comparação social irrealista em redes sociais.</li>
+
+
+
+<li><strong>Sedentarismo e problemas físicos:</strong> a permanência prolongada em frente às telas para acessar a internet pode contribuir para a obesidade, problemas posturais e distúrbios de visão ou de sono.</li>
+</ul>
+
+
+
+<figure data-wp-context="{&quot;imageId&quot;:&quot;69947c471b599&quot;}" data-wp-interactive="core/image" data-wp-key="69947c471b599" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2025/07/tbr-adsl-01-1060x596.png" alt="Ilustração sobre conexão ADSL" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">
+				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />
+			</svg>
+		</button><figcaption >A internet mudou a forma como as pessoas se comunicam e trabalho, mas oferece diversos riscos para os usuários (imagem: Vitor Pádua/Tecnoblog)</figcaption></figure>
+
+
+
+<h2  >Qual é a diferença entre internet e intranet?</h2>
+
+
+
+<p>Internet é uma rede global de infraestrutura pública que conecta bilhões de dispositivos mundialmente. Ela usa protocolos de comunicação padronizados, como o TCP/IP, para permitir o livre acesso a informações e serviços por qualquer usuário conectado.</p>
+
+
+
+<p>Intranet é uma <a href="https://tecnoblog.net/responde/o-que-e-intranet/" type="link" >rede de computadores privada</a> pertecente a uma organização, acessível exclusivamente por colaboradores autorizados. Ela é projetada para o compartilhamento seguro de dados internos, ferramentas de colaboração e sistemas de gestão protegidos por firewall.</p>
+
+
+
+<h2  >Qual é a diferença entre internet e World Wide Web?</h2>
+
+
+
+<p>Internet é a infraestrutura física global e protocolos que conecta redes de computadores e dispositivos em todo o mundo. Ela funciona como o sistema de rotas básico que permite o tráfego de qualquer tipo de dado digital entre pontos distintos.</p>
+
+
+
+<p><a href="https://tecnoblog.net/responde/o-que-significa-www-conheca-a-historia-da-rede-mundial-de-computadores/" type="link" >World Wide Web</a> é um sistema de informações e documentos de hipertexto interconectados que funciona usando a infraestrutura da internet. Criada por Tim Berners-Lee, é o serviço que os usuários acessam via navegadores para visualizar páginas, imagens e vídeos por meio de URLs.</p>
+
+
+
+<h2  >Qual é a diferença entre internet e Wi-Fi?</h2>
+
+
+
+<p>A internet é a rede global de computadores e servidores interconectados que transmite dados mundialmente por meio de protocolos específicos. Ela funciona como a infraestrutura base que permite a comunicação e o acesso a serviços e conteúdos em grandes distâncias. </p>
+
+
+
+<p>O <a href="https://tecnoblog.net/responde/o-que-e-wi-fi-como-funciona/" type="link" >Wi-Fi é uma tecnologia sem fio que usa ondas de rádio</a> para conectar dispositivos a uma rede local ou à internet por meio de um roteador. Ele oferece acesso sem cabos em um alcance limitado, mas depende de uma conexão ativa de internet para funcionar online.</p>
+<p><a href="https://tecnoblog.net/responde/o-que-e-internet-entenda-o-funcionamento-da-rede-global-de-computadores/">O que é internet? Entenda o funcionamento da rede global de computadores</a></p>
+
+<p><em>Fonte original: <a href="https://tecnoblog.net/responde/o-que-e-internet-entenda-o-funcionamento-da-rede-global-de-computadores/" target="_blank" rel="noopener">GON</a></em></p>
+                    </div>
+
+                    <!-- TAGS -->
+                    <div class="article-tags">
+                        <a href="index.html#educacao" class="article-tag">GON</a>
+                        <a href="index.html#educacao" class="article-tag">educacao</a>
+                    </div>
+
+                    <!-- SHARE BOTTOM -->
+                    <div class="article-meta" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: var(--sp-6);">
+                        <div class="article-share" style="margin-left: 0;">
+                            <span>Compartilhar esta matéria:</span>
+                            <button class="share-btn share-btn--whatsapp" data-share="whatsapp"><i class="fab fa-whatsapp"></i></button>
+                            <button class="share-btn share-btn--facebook" data-share="facebook"><i class="fab fa-facebook-f"></i></button>
+                            <button class="share-btn share-btn--twitter" data-share="twitter"><i class="fab fa-x-twitter"></i></button>
+                            <button class="share-btn share-btn--telegram" data-share="telegram"><i class="fab fa-telegram"></i></button>
+                            <button class="share-btn share-btn--copy" data-share="copy"><i class="fas fa-link"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- RELATED -->
+                    <section class="related">
+                        <h3>Leia também</h3>
+                        <div class="card-grid card-grid--3">
+                            <article class="card">
+                                <a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="card__link">
+                                    <div class="card__img"><img src="https://static6.odiariodemogi.net.br/wp-content/uploads/2026/02/Rabada-com-agriao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Como preparar rabada: 5 receitas simples para o dia a dia</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="card__link">
+                                    <div class="card__img"><img src="https://static3.odiariodemogi.net.br/wp-content/uploads/2025/06/image-3.png" alt="" loading="lazy"><span class="tag tag--politics">Política</span></div>
+                                    <div class="card__body"><h3>DER ativa novo radar na Mogi-Guararema; veja local</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="card__link">
+                                    <div class="card__img"><img src="https://static5.odiariodemogi.net.br/wp-content/uploads/2026/02/Feng-shui-ano-do-cavalo-decoracao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</h3></div>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar" aria-label="Conteúdo complementar">
+                    <div class="widget widget--trending">
+                        <h3 class="widget__title"><i class="fas fa-fire-flame-curved"></i> Mais Lidas</h3>
+                        <ol class="trending">
+                            <li class="trending__item"><span class="trending__rank">1</span><a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="trending__link">Como preparar rabada: 5 receitas simples para o dia a dia</a></li>
+                            <li class="trending__item"><span class="trending__rank">2</span><a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="trending__link">DER ativa novo radar na Mogi-Guararema; veja local</a></li>
+                            <li class="trending__item"><span class="trending__rank">3</span><a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="trending__link">Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</a></li>
+                            <li class="trending__item"><span class="trending__rank">4</span><a href="artigos/7-grupos-de-alimentos-que-fazem-bem-para-o-cerebro.html" class="trending__link">7 grupos de alimentos que fazem bem para o cérebro</a></li>
+                            <li class="trending__item"><span class="trending__rank">5</span><a href="artigos/agua-de-coco-emagrece-veja-4-mitos-e-verdade-sobre-o-consumo-da-bebida.html" class="trending__link">Água de coco emagrece? Veja 4 mitos e verdade sobre o consumo da bebida</a></li>
+                        </ol>
+                    </div>
+                    <div class="ad-banner ad-banner--sidebar"><div class="ad-placeholder ad-placeholder--tall"><span>Publicidade</span></div></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo"><div class="header__logo-mark"><span>NH</span></div><strong>Notícias<span>Hoje</span></strong></a>
+                    <p>Jornalismo sério, imparcial e comprometido com a verdade.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col"><h4>Editorias</h4><ul><li><a href="../index.html#politica">Política</a></li><li><a href="../index.html#economia">Economia</a></li><li><a href="../index.html#tecnologia">Tecnologia</a></li><li><a href="../index.html#esportes">Esportes</a></li><li><a href="../index.html#cultura">Cultura</a></li><li><a href="../index.html#ciencia">Ciência</a></li></ul></div>
+                    <div class="footer__col"><h4>Portal</h4><ul><li><a href="../sobre.html">Sobre o NH</a></li><li><a href="../expediente.html">Expediente</a></li><li><a href="../privacidade.html">Privacidade</a></li><li><a href="../termos.html">Termos de Uso</a></li><li><a href="../etica.html">Código de Ética</a></li><li><a href="../anuncie.html">Anuncie</a></li></ul></div>
+                    <div class="footer__col"><h4>Contato</h4><ul><li><a href="mailto:contato@noticiashoje.com.br"><i class="far fa-envelope"></i> contato@noticiashoje.com.br</a></li><li><a href="tel:+551130000000"><i class="fas fa-phone"></i> (11) 3000-0000</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 NotíciasHoje. Todos os direitos reservados.</p>
+                <div class="footer__badges"><span><i class="fas fa-shield-halved"></i> Site Seguro</span><span><i class="fas fa-check-circle"></i> Jornalismo Verificado</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="btt" id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+        <div class="cookie-banner__inner">
+            <div class="cookie-banner__text"><i class="fas fa-cookie-bite"></i><p>Utilizamos cookies. Ao continuar, você concorda com nossa <a href="../privacidade.html">Política de Privacidade</a>.</p></div>
+            <div class="cookie-banner__actions"><button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceitar</button><button class="cookie-btn cookie-btn--reject" id="cookieReject">Rejeitar</button></div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

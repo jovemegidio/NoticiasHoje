@@ -3,31 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Congresso aprova reforma tributária histórica e promete simplificar impostos para 200 milhões de brasileiros.">
+    <meta name="description" content="NotíciasHoje — Leia a matéria completa no portal de notícias mais completo do Brasil.">
     <meta name="theme-color" content="#D32F2F">
     <meta name="robots" content="index, follow">
-    <meta name="author" content="Marina Santos — NotíciasHoje">
+    <meta name="author" content="NotíciasHoje">
 
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://noticiashoje.com.br/noticia.html">
-    <meta property="og:title" content="Congresso aprova reforma tributária histórica — NotíciasHoje">
-    <meta property="og:description" content="Mudança estrutural foi aprovada após 8 meses de negociação. Especialistas apontam impactos positivos para economia a partir de 2027.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop">
+    <meta property="og:title" content="Notícia — NotíciasHoje">
+    <meta property="og:description" content="Leia a matéria completa no NotíciasHoje.">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="NotíciasHoje">
-    <meta property="article:published_time" content="2026-02-17T10:00:00-03:00">
-    <meta property="article:author" content="Marina Santos">
-    <meta property="article:section" content="Política">
-    <meta property="article:tag" content="reforma tributária">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Congresso aprova reforma tributária histórica — NotíciasHoje">
-    <meta name="twitter:description" content="Mudança estrutural aprovada após 8 meses de negociação.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop">
+    <meta name="twitter:title" content="Notícia — NotíciasHoje">
+    <meta name="twitter:description" content="Leia a matéria completa no NotíciasHoje.">
 
-    <title>Congresso aprova reforma tributária histórica — NotíciasHoje</title>
+    <title>Notícia — NotíciasHoje</title>
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,18 +30,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) — dynamically populated by JS -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "NewsArticle",
-        "headline": "Congresso aprova reforma tributária histórica e promete simplificar impostos para 200 milhões de brasileiros",
-        "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1200&h=630&fit=crop",
-        "datePublished": "2026-02-17T10:00:00-03:00",
-        "dateModified": "2026-02-17T12:30:00-03:00",
+        "headline": "Notícia",
+        "datePublished": "",
         "author": {
             "@type": "Person",
-            "name": "Marina Santos"
+            "name": "Redação"
         },
         "publisher": {
             "@type": "Organization",
@@ -57,7 +49,7 @@
                 "url": "https://noticiashoje.com.br/logo.png"
             }
         },
-        "description": "Mudança estrutural foi aprovada após 8 meses de negociação. Especialistas apontam impactos positivos para economia a partir de 2027."
+        "description": ""
     }
     </script>
 </head>
@@ -134,8 +126,7 @@
             <!-- BREADCRUMB -->
             <nav class="breadcrumb" aria-label="Breadcrumb">
                 <a href="index.html">Início</a><span class="breadcrumb__sep">›</span>
-                <a href="index.html#politica">Política</a><span class="breadcrumb__sep">›</span>
-                <span>Congresso aprova reforma tributária</span>
+                <span id="breadcrumbCategory">Notícia</span>
             </nav>
 
             <div class="layout">
@@ -143,20 +134,18 @@
 
                     <!-- ARTICLE HEADER -->
                     <header class="article-header">
-                        <span class="tag tag--politics">Política</span>
-                        <h1>Congresso aprova reforma tributária histórica e promete simplificar impostos para 200 milhões de brasileiros</h1>
-                        <p class="article-subtitle">Mudança estrutural foi aprovada após 8 meses de negociação entre governo e partidos. Especialistas apontam impactos positivos para economia a partir de 2027, com unificação de cinco tributos em um único imposto.</p>
+                        <span class="tag" id="articleTag">Notícia</span>
+                        <h1 id="articleTitle">Carregando notícia…</h1>
+                        <p class="article-subtitle" id="articleSubtitle"></p>
 
                         <div class="article-meta">
                             <div class="article-meta__author">
-                                <img src="https://i.pravatar.cc/80?img=12" alt="Marina Santos">
                                 <div>
-                                    <strong>Marina Santos</strong>
-                                    <span>Editora de Política</span>
+                                    <strong id="articleAuthor">Redação</strong>
+                                    <span id="articleAuthorRole"></span>
                                 </div>
                             </div>
-                            <time datetime="2026-02-17T10:00:00-03:00"><i class="far fa-clock"></i> 17 fev 2026 às 10h00</time>
-                            <span><i class="far fa-clock"></i> Atualizado há 2h</span>
+                            <time id="articleDate"><i class="far fa-clock"></i></time>
 
                             <div class="article-share">
                                 <span>Compartilhar:</span>
@@ -170,69 +159,18 @@
                     </header>
 
                     <!-- COVER IMAGE -->
-                    <figure class="article-cover">
-                        <img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=1000&h=560&fit=crop&q=85" alt="Plenário do Congresso Nacional durante votação da reforma tributária">
-                        <figcaption>Plenário do Congresso Nacional durante sessão de votação da reforma tributária — Foto: Agência Senado</figcaption>
+                    <figure class="article-cover" id="articleCover" style="display:none;">
+                        <img src="" alt="" id="articleCoverImg">
+                        <figcaption id="articleCoverCaption"></figcaption>
                     </figure>
 
                     <!-- ARTICLE CONTENT -->
-                    <div class="article-content">
-                        <p>O <strong>Congresso Nacional</strong> aprovou nesta segunda-feira (17) a reforma tributária que promete ser a mais significativa mudança no sistema de impostos brasileiro nas últimas três décadas. A proposta, que tramitou por oito meses entre Câmara e Senado, foi aprovada com 378 votos favoráveis e 72 contrários na votação final.</p>
-
-                        <p>A reforma unifica cinco tributos — <strong>IPI, PIS, Cofins, ICMS e ISS</strong> — em dois novos impostos: a Contribuição sobre Bens e Serviços (CBS), de competência federal, e o Imposto sobre Bens e Serviços (IBS), compartilhado entre estados e municípios.</p>
-
-                        <h2>O que muda na prática</h2>
-
-                        <p>Para o consumidor final, a principal mudança será a transparência. Pela primeira vez, será possível saber exatamente quanto de imposto está embutido no preço de cada produto ou serviço.</p>
-
-                        <blockquote>
-                            "Esta reforma é um divisor de águas para o Brasil. Estamos abandonando um sistema caótico, com mais de 5.000 regras tributárias, por um modelo simples e transparente que vai impulsionar o crescimento econômico."
-                            <br><br>
-                            <strong>— Ministro da Fazenda</strong>
-                        </blockquote>
-
-                        <p>Segundo estimativas do Ministério da Fazenda, a simplificação do sistema tributário deve gerar um crescimento adicional de <strong>1,5 ponto percentual</strong> no PIB ao longo dos próximos 10 anos, além de atrair R$ 200 bilhões em novos investimentos estrangeiros.</p>
-
-                        <h2>Cronograma de implementação</h2>
-
-                        <p>A transição para o novo sistema será gradual, estendendo-se de 2027 a 2033, para dar tempo às empresas e ao poder público de se adaptarem. O cronograma prevê:</p>
-
-                        <ul>
-                            <li><strong>2027:</strong> Início da fase de testes com alíquota única de 1% para CBS e IBS</li>
-                            <li><strong>2028-2029:</strong> Extinção gradual do PIS e Cofins, substituídos pela CBS</li>
-                            <li><strong>2030-2032:</strong> Redução progressiva do ICMS e ISS</li>
-                            <li><strong>2033:</strong> Extinção total dos tributos antigos e vigência plena do novo sistema</li>
-                        </ul>
-
-                        <h2>Setores beneficiados</h2>
-
-                        <p>A reforma prevê alíquotas reduzidas para setores considerados essenciais. A <strong>cesta básica nacional</strong> terá isenção total de impostos, enquanto saúde, educação e transporte público contarão com alíquotas reduzidas em 60%.</p>
-
-                        <p>O agronegócio, que representa 24% do PIB brasileiro, também será beneficiado com a simplificação da cadeia de créditos tributários, o que deve reduzir custos operacionais em até 15% para os produtores rurais.</p>
-
-                        <h2>Impacto nos estados e municípios</h2>
-
-                        <p>Para compensar possíveis perdas de arrecadação durante a transição, o governo federal criou um <strong>Fundo de Desenvolvimento Regional</strong> de R$ 60 bilhões, que será distribuído entre os estados mais afetados pela mudança. Além disso, um fundo de compensação temporário garantirá que nenhum ente federativo perca receita nos primeiros cinco anos.</p>
-
-                        <p>O texto aprovado também inclui a criação de um <strong>Comitê Gestor do IBS</strong>, composto por representantes de estados e municípios, que será responsável pela administração, fiscalização e distribuição da arrecadação do novo imposto.</p>
-
-                        <h2>Próximos passos</h2>
-
-                        <p>A reforma segue agora para sanção presidencial, prevista para a próxima semana. O governo já iniciou a regulamentação por meio de leis complementares que detalharão as alíquotas, exceções e mecanismos de transição.</p>
-
-                        <p>Especialistas ouvidos pelo <strong>NotíciasHoje</strong> avaliam que, apesar das imperfeições inevitáveis de uma reforma desta magnitude, o texto aprovado representa um avanço significativo para a competitividade da economia brasileira no cenário internacional.</p>
+                    <div class="article-content" id="articleContent">
+                        <p style="text-align:center;color:var(--text-secondary);padding:3rem 0;"><i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i> Carregando conteúdo…</p>
                     </div>
 
                     <!-- TAGS -->
-                    <div class="article-tags">
-                        <a href="#" class="article-tag">Reforma Tributária</a>
-                        <a href="#" class="article-tag">Congresso</a>
-                        <a href="#" class="article-tag">Impostos</a>
-                        <a href="#" class="article-tag">Economia</a>
-                        <a href="#" class="article-tag">Política</a>
-                        <a href="#" class="article-tag">CBS</a>
-                        <a href="#" class="article-tag">IBS</a>
-                    </div>
+                    <div class="article-tags" id="articleTags"></div>
 
                     <!-- SHARE BOTTOM -->
                     <div class="article-meta" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: var(--sp-6);">
@@ -247,28 +185,9 @@
                     </div>
 
                     <!-- RELATED ARTICLES -->
-                    <section class="related">
+                    <section class="related" id="relatedSection" style="display:none;">
                         <h3>Leia também</h3>
-                        <div class="card-grid card-grid--3">
-                            <article class="card">
-                                <a href="noticia.html" class="card__link">
-                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=400&h=240&fit=crop&q=80" alt="Gráfico" loading="lazy"><span class="tag tag--economy">Economia</span></div>
-                                    <div class="card__body"><h3>PIB brasileiro cresce 3,2% e supera todas as projeções do mercado</h3><time><i class="far fa-clock"></i> Há 5h</time></div>
-                                </a>
-                            </article>
-                            <article class="card">
-                                <a href="noticia.html" class="card__link">
-                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=400&h=240&fit=crop&q=80" alt="Senado" loading="lazy"><span class="tag tag--politics">Política</span></div>
-                                    <div class="card__body"><h3>Senado debate projeto de ampliação do acesso à educação rural</h3><time><i class="far fa-clock"></i> Há 5h</time></div>
-                                </a>
-                            </article>
-                            <article class="card">
-                                <a href="noticia.html" class="card__link">
-                                    <div class="card__img"><img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=240&fit=crop&q=80" alt="Banco Central" loading="lazy"><span class="tag tag--economy">Economia</span></div>
-                                    <div class="card__body"><h3>Banco Central mantém Selic em 9,5% e sinaliza corte</h3><time><i class="far fa-clock"></i> Há 8h</time></div>
-                                </a>
-                            </article>
-                        </div>
+                        <div class="card-grid card-grid--3" id="relatedArticles"></div>
                     </section>
                 </article>
 
@@ -276,13 +195,7 @@
                 <aside class="sidebar" aria-label="Conteúdo complementar">
                     <div class="widget widget--trending">
                         <h3 class="widget__title"><i class="fas fa-fire-flame-curved"></i> Mais Lidas</h3>
-                        <ol class="trending">
-                            <li class="trending__item"><span class="trending__rank">1</span><a href="noticia.html" class="trending__link">Congresso aprova reforma tributária histórica</a></li>
-                            <li class="trending__item"><span class="trending__rank">2</span><a href="noticia.html" class="trending__link">Brasil goleia por 4x0 nas eliminatórias</a></li>
-                            <li class="trending__item"><span class="trending__rank">3</span><a href="noticia.html" class="trending__link">Dólar atinge menor valor em 6 meses</a></li>
-                            <li class="trending__item"><span class="trending__rank">4</span><a href="noticia.html" class="trending__link">Startup de IA recebe US$ 200 milhões</a></li>
-                            <li class="trending__item"><span class="trending__rank">5</span><a href="noticia.html" class="trending__link">Nova espécie de dinossauro em MG</a></li>
-                        </ol>
+                        <ol class="trending" id="trendingList"></ol>
                     </div>
 
                     <div class="ad-banner ad-banner--sidebar"><div class="ad-placeholder ad-placeholder--tall"><span>Publicidade</span></div></div>
@@ -297,7 +210,7 @@
                                 <input type="email" placeholder="Seu e-mail" required aria-label="Seu e-mail">
                                 <button type="submit">Cadastrar</button>
                             </form>
-                            <small>Ao se cadastrar, você concorda com nossa <a href="#">Política de Privacidade</a>.</small>
+                            <small>Ao se cadastrar, você concorda com nossa <a href="privacidade.html">Política de Privacidade</a>.</small>
                         </div>
                     </div>
                 </aside>

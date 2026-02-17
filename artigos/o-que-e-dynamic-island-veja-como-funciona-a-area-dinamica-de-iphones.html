@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Dynamic Island serve como um hub para exibir notificações e alertas, além de habilitar gerenciamento rápido de apps
+O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+    <meta name="theme-color" content="#D32F2F">
+    <meta name="author" content="Redação">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+    <meta property="og:description" content="A Dynamic Island serve como um hub para exibir notificações e alertas, além de habilitar gerenciamento rápido de apps
+O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+    <meta property="og:image" content="https://tecnoblog.net">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="NotíciasHoje">
+    <meta property="article:published_time" content="2026-02-13T22:01:00.000Z">
+    <meta property="article:section" content="Política">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+    <meta name="twitter:description" content="A Dynamic Island serve como um hub para exibir notificações e alertas, além de habilitar gerenciamento rápido de apps
+O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+    <meta name="twitter:image" content="https://tecnoblog.net">
+    <title>O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones — NotíciasHoje</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23D32F2F'/><text x='50' y='68' font-family='Arial' font-size='48' font-weight='900' fill='white' text-anchor='middle'>NH</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsArticle",
+        "headline": "O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones",
+        "image": "https://tecnoblog.net",
+        "datePublished": "2026-02-13T22:01:00.000Z",
+        "author": { "@type": "Person", "name": "Redação" },
+        "publisher": { "@type": "Organization", "name": "NotíciasHoje" },
+        "description": "A Dynamic Island serve como um hub para exibir notificações e alertas, além de habilitar gerenciamento rápido de apps
+O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones"
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__left">
+                <span class="topbar__date" id="currentDate"></span>
+                <span class="topbar__sep">|</span>
+                <span class="topbar__greeting" id="greeting"></span>
+            </div>
+            <div class="topbar__right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema escuro"><i class="fas fa-moon"></i></button>
+                <a href="../index.html"><i class="far fa-bell"></i> Alertas</a>
+                <a href="../index.html"><i class="far fa-envelope"></i> Newsletter</a>
+                <a href="#"><i class="far fa-user"></i> Entrar</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a href="../index.html" class="header__logo" aria-label="NotíciasHoje - Página inicial">
+                <div class="header__logo-mark"><span>NH</span></div>
+                <div class="header__logo-text"><strong>Notícias<span>Hoje</span></strong><small>Informação com credibilidade</small></div>
+            </a>
+            <div class="header__search" id="searchBar">
+                <form class="header__search-form" id="searchForm" role="search">
+                    <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off" aria-label="Campo de busca">
+                    <button type="submit" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="header__actions">
+                <button class="header__search-toggle" id="searchToggle" aria-label="Abrir busca"><i class="fas fa-search"></i></button>
+                <button class="header__menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav" id="mainNav" aria-label="Navegação principal">
+        <div class="container">
+            <ul class="nav__list" id="navList" role="menubar">
+                <li role="none"><a href="../index.html" class="nav__link" role="menuitem"><i class="fas fa-home"></i> Início</a></li>
+                <li role="none"><a href="../index.html#politica" class="nav__link active" role="menuitem">Política</a></li>
+                <li role="none"><a href="../index.html#economia" class="nav__link" role="menuitem">Economia</a></li>
+                <li role="none"><a href="../index.html#tecnologia" class="nav__link" role="menuitem">Tecnologia</a></li>
+                <li role="none"><a href="../index.html#saude" class="nav__link" role="menuitem">Saúde</a></li>
+                <li role="none"><a href="../index.html#esportes" class="nav__link" role="menuitem">Esportes</a></li>
+                <li role="none"><a href="../index.html#cultura" class="nav__link" role="menuitem">Cultura</a></li>
+                <li role="none"><a href="../index.html#mundo" class="nav__link" role="menuitem">Mundo</a></li>
+                <li role="none"><a href="../index.html#ciencia" class="nav__link" role="menuitem">Ciência</a></li>
+                <li role="none"><a href="../index.html#opiniao" class="nav__link" role="menuitem">Opinião</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="main" id="main-content">
+        <div class="container">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">Início</a><span class="breadcrumb__sep">›</span>
+                <a href="../index.html#politica">Política</a><span class="breadcrumb__sep">›</span>
+                <span>O que é Dynamic Island? Veja como funciona a área dinâmica d...</span>
+            </nav>
+
+            <div class="layout">
+                <article class="layout__main">
+                    <!-- ARTICLE HEADER -->
+                    <header class="article-header">
+                        <span class="tag tag--politics">Política</span>
+                        <h1>O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones</h1>
+                        <p class="article-subtitle">A Dynamic Island serve como um hub para exibir notificações e alertas, além de habilitar gerenciamento rápido de apps
+O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones</p>
+                        <div class="article-meta">
+                            <div class="article-meta__author">
+                                <img src="https://i.pravatar.cc/80?u=Reda%C3%A7%C3%A3o" alt="Redação">
+                                <div><strong>Redação</strong><span>GON</span></div>
+                            </div>
+                            <time datetime="2026-02-13T22:01:00.000Z"><i class="far fa-clock"></i> 13 de fev. de 2026 às 19:01</time>
+                            <div class="article-share">
+                                <span>Compartilhar:</span>
+                                <button class="share-btn share-btn--whatsapp" data-share="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></button>
+                                <button class="share-btn share-btn--facebook" data-share="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></button>
+                                <button class="share-btn share-btn--twitter" data-share="twitter" aria-label="Twitter"><i class="fab fa-x-twitter"></i></button>
+                                <button class="share-btn share-btn--telegram" data-share="telegram" aria-label="Telegram"><i class="fab fa-telegram"></i></button>
+                                <button class="share-btn share-btn--copy" data-share="copy" aria-label="Copiar link"><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </header>
+
+                    <!-- COVER IMAGE -->
+                    <figure class="article-cover">
+                        <img src="https://tecnoblog.net" alt="O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones">
+                        <figcaption>Foto: GON</figcaption>
+                    </figure>
+
+                    <!-- ARTICLE CONTENT -->
+                    <div class="article-content">
+                        <figure data-wp-context="{&quot;imageId&quot;:&quot;69947c477c0f7&quot;}" data-wp-interactive="core/image" data-wp-key="69947c477c0f7" ><img decoding="async" width="1060" height="597" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2025/10/iphone-17-em-maos-thassius-veloso-tecnoblog-4-1060x597.jpg" alt="Mão segurando iPhone 17 azul-névoa, destacando a parte frontal e a lateral esquerda, enquadrando metade do aparelho, com mesa em madeira como fundo" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />			</svg>		</button><figcaption >Dynamic Island combina hardware e software para oferecer mais interatividade em iPhones (Imagem: Thássius Veloso/Tecnoblog)</figcaption></figure><p>A Dynamic Island ou Ilha Dinâmica é um recurso de iPhone que utiliza o recorte em formato de pílula de modelos compatíveis para permitir comandos touch screen e exibir notificações dinâmicas na tela.</p><p>Ao combinar o recorte na tela, o touch screen do display e o iOS dos iPhones, a Dynamic Island consegue interagir com ferramentas e oferecer experiências interativas para os usuários. Pixels em volta do recorte simulam a expansão da área, criando novas dinâmicas visuais e funcionais.</p><p>O aproveitamento do recorte em formato de pílula e a exibição reformulada das atividades ao vivo figuram entre as principais vantagens da Ilha Dinâmica. Contudo, o recurso está disponível apenas em determinados iPhones e certas versões de iOS.</p><p>A seguir, entenda melhor o que é a Dynamic Island e como ela funciona, e confira as diferenças entre o recurso e o notch padrão de smartphones.</p><div ><h2>Índice</h2><ul><li><a href="#h-o-que-e-dynamic-island" data-level="2">O que é Dynamic Island?</a><ul><li><a href="#h-o-que-significa-dynamic-island" data-level="3">O que significa Dynamic Island?</a></li></ul></li><li><a href="#h-para-que-serve-a-dynamic-island" data-level="2">Para que serve a Dynamic Island?</a></li><li><a href="#h-como-funciona-a-dynamic-island" data-level="2">Como funciona a Dynamic Island</a><ul><li><a href="#h-consigo-desativar-a-ilha-dinamica-no-iphone" data-level="3">Consigo desativar a Ilha Dinâmica no iPhone?</a></li></ul></li><li><a href="#h-quais-iphones-contam-com-a-dynamic-island" data-level="2">Quais iPhones contam com a Dynamic Island?</a><ul><li><a href="#h-tem-dynamic-island-para-android" data-level="3">Tem Dynamic Island para Android?</a></li></ul></li><li><a href="#h-quais-sao-as-vantagens-da-dynamic-island" data-level="2">Quais são as vantagens da Dynamic Island?</a></li><li><a href="#h-quais-sao-as-desvantagens-da-dynamic-island" data-level="2">Quais são as desvantagens da Dynamic Island?</a></li><li><a href="#h-qual-e-a-diferenca-entre-dynamic-island-e-o-notch-padrao" data-level="2">Qual é a diferença entre Dynamic Island e o notch padrão?</a></li></ul></div><h2  >O que é Dynamic Island?</h2><p>Dynamic Island é um recurso que combina hardware e software para oferecer funcionalidades dinâmicas em iPhones compatíveis. Em outras palavras, trata-se de um recorte na tela em formato de pílula que abriga a câmera frontal e os sensores do Face ID, que exibe conteúdos visuais no topo da tela e habilita interações com a sensibilidade ao toque de áreas próximas.</p><h3  >O que significa Dynamic Island?</h3><p>O termo &#8220;Dynamic Island&#8221; significa &#8220;Ilha Dinâmica&#8221;, em tradução livre. Por mais que a Apple não tenha feito nenhuma declaração oficial sobre, a expressão provavelmente associa o recorte em formato de pílula que fica &#8220;ilhado&#8221; no topo da tela dos iPhones, com as funções dinâmicas que o recurso habilita.</p><h2  >Para que serve a Dynamic Island?</h2><p>A Dynamic Island tem a função de oferecer novas formas de interação do usuário com aplicações em seu iPhone, criando novas experiências de usabilidade. Esse recurso habilita algumas funcionalidades, como:</p><ul ><li><strong>Visualização de notificações:</strong> você pode ver notificações e alertas compactadas, sem interromper o uso simultâneo em outros apps.</li><li><strong>Monitoramento de atividades ao vivo:</strong> a Dynamic Island consegue exibir atividades em andamento (chamadas de &#8220;Atividades ao vivo&#8221;), como uma música tocando, o placar ao vivo de um jogo ou uma ligação ativa, por exemplo.</li><li><strong>Controle de mídia ou ligações:</strong> é possível controlar a reprodução de mídias, bem como atender ou desligar chamadas pelo pop-up na Ilha Dinâmica do iPhone.</li><li><strong>Interação com apps:</strong> a Dynamic Island também pode maximizar ou minimizar ferramentas, além de servir como atalho para ativar ou controlar uso de apps (como a lanterna, por exemplo).</li></ul><figure ><video controls src="https://www.apple.com/newsroom/videos/iphone-14-pro-3up/large_2x.mp4"></video></figure><h2  >Como funciona a Dynamic Island</h2><p>O funcionamento da Dynamic Island combina aspectos de hardware e software do dispositivo. Começando pelo fator hardware, o recurso aproveita o recorte em formato de pílula no topo de certos modelos de iPhone. Esse espaço é uma área física recortada na tela, onde ficam localizadas a câmera de selfie e o Face ID.</p><p>Trata-se de uma área menor e muito mais discreta que o notch introduzido no <a  data-ilj-link-preview="true"  data-featured-image="https://files.tecnoblog.net/wp-content/uploads/2025/01/iphone-x-cinza-espacial.png"  data-excerpt="O iPhone X oferece tela Super Retina HD OLED de 5,8 polegadas com resolução de 2.436 x 1.125 pixels e densidade de 458 ppi, garantindo imagens nítidas e vibrantes. Com estrutura em aço inoxidável e traseira de vidro, ele tem resistência IP67 à água e poeira. A câmera grava vídeos em 4K a 60 fps&hellip;" href="https://tecnoblog.net/produtos/apple-iphone-x/">iPhone X</a>, visto em modelos mais antigos. Ainda assim, é um espaço que ocupa pixels de tela.</p><figure data-wp-context="{&quot;imageId&quot;:&quot;69947c477db0d&quot;}" data-wp-interactive="core/image" data-wp-key="69947c477db0d" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2022/12/iphone-14-pro-8-1060x596.jpg" alt="iPhone 14 Pro (Imagem: Emerson Alecrim/Tecnoblog)" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />			</svg>		</button><figcaption >Recorte em formato de pílula da Dynamic Island aprimorou o aproveitamento de espaço na parte superior da tela (Imagem: Emerson Alecrim/Tecnoblog)</figcaption></figure><p>Para aproveitar essa &#8220;área morta&#8221;, a Apple decidiu integrar recursos de interatividade para esse recorte ao fazer com que o iPhone preencha pixels ao redor desse espaço. Visualmente falando, dá a impressão de que a área se expande e retrai. Mas na prática, o recorte está sempre ali, apenas com mais pixels em volta para causar esse impacto.</p><p>Combinada com determinadas versões do <a href="https://tecnoblog.net/responde/o-que-e-ios-entenda-como-o-sistema-do-iphone-mudou-a-industria-de-smartphones/" type="link" >sistema operacional iOS</a> e certos modelos de iPhones elegíveis, a Dynamic Island é capaz de usar a área do topo do dispositivo para exibir notificações e alertas de ferramentas interativas, que funcionam simultaneamente com outras atividades.</p><p>Além disso, o recurso aproveita do touch screen de pixels próximos ao recorte para habilitar funcionalidades com o toque ou deslizar dos dedos. É possível, por exemplo, trocar uma música, atender uma ligação ou acompanhar uma rota a partir desse mini widget exibido nos celulares da Apple.</p><figure data-wp-context="{&quot;imageId&quot;:&quot;69947c477e3a1&quot;}" data-wp-interactive="core/image" data-wp-key="69947c477e3a1" ><img decoding="async" width="1060" height="596" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2023/09/iphone-15-lancamento-apple-cupertino-xxx-1060x596.jpg" alt="Mão segurando celular" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />			</svg>		</button><figcaption >Controle de música na Dynamic Island do iPhone 15 (Imagem: Thássius Veloso/Tecnoblog)</figcaption></figure><p>E o resultado disso é uma nova experiência interativa para usuários de iPhone, seja apenas no aspecto visual ou a partir de comandos touch screen.</p><h3  >Consigo desativar a Ilha Dinâmica no iPhone?</h3><p>Não completamente. É importante lembrar que a Dynamic Island do iPhone também envolve a questão de hardware, que no caso, trata-se de uma perfuração na tela em formato de pílula para abrigar e ocultar a câmera frontal e o Face ID. E não há como retirá-lo, já que ele é integrado à tela do celular.</p><p>Mas caso queira minimizar os recursos dinâmicos, basta deslizar o dedo nos widgets das atividades ao vivo, das extremidades para o centro.</p><p>Se preferir, você pode entrar nas configurações de aplicativos do iPhone e desabilitar as atividades ao vivo das ferramentas desejadas. No entanto, tenha em mente que isso também vai ocultar os pop-ups de atividade na tela bloqueada.</p><h2  >Quais iPhones contam com a Dynamic Island?</h2><p>A Dynamic Island é atualmente suportado no <a  data-ilj-link-preview="true"  data-featured-image="https://files.tecnoblog.net/wp-content/uploads/2025/01/iphone-14-pro-dourado-700x700.png"  data-excerpt="O iPhone 14 Pro oferece tela Super Retina XDR OLED de 6.1 polegadas com resolução de 1.179 x 2.556 pixels e taxa de atualização de 120 Hz, proporcionando uma excelente experiência visual. Equipado com armazenamento interno de até 1 TB e 6 GB de RAM, o dispositivo suporta multitarefas e armazenamento de grandes quantidades de&hellip;" href="https://tecnoblog.net/produtos/apple-iphone-14-pro/">iPhone 14 Pro</a> e no iPhone 14 Pro Max, nos celulares das linhas numéricas iPhone 15, iPhone 16 e iPhone 17 — incluindo variantes Plus, Pro e Pro Max —, além do iPhone Air. Além da compatibilidade restrita a certos <a href="https://tecnoblog.net/responde/padrao-pro-pro-max-e-air-entenda-as-diferencas-entre-as-versoes-de-iphone/" type="link" >tipos de iPhone</a>, o recurso também exige a versão 16 do iOS ou patches mais recentes.</p><p>Não há confirmação se todos os futuros modelos serão compatíveis com a Ilha Dinâmica, mas a tendência é que os próximos iPhones da linha numérica também suportem o recurso.</p><h3  >Tem Dynamic Island para Android?</h3><p>Não. A Dynamic Island não está disponível para smartphones <a  data-ilj-link-preview="true"  data-featured-image=""  data-excerpt="O sistema Android iniciou em 2003 com a startup Android Inc., mais tarde adquirida pelo Google, e teve a primeira versão comercial lançada apenas em 2008" href="https://tecnoblog.net/responde/o-que-e-android-conheca-a-historia-do-sistema-operacional-movel-mais-popular-do-mundo/">Android</a>, já que trata-se de um recurso da Apple exclusivo para iPhones.</p><p>Contudo, existem soluções similares, como a Mini Cápsula vista em smartphones da Realme, por exemplo. Também há apps para Android que conseguem simular a Ilha Dinâmica em celulares, mesmo que os dispositivos não tenham o recorte em formato de pílula no topo do display.</p><figure data-wp-context="{&quot;imageId&quot;:&quot;69947c477f442&quot;}" data-wp-interactive="core/image" data-wp-key="69947c477f442" ><img decoding="async" width="976" height="736" data-wp-class--hide="state.isContentHidden" data-wp-class--show="state.isContentVisible" data-wp-init="callbacks.setButtonStyles" data-wp-on--click="actions.showLightbox" data-wp-on--load="callbacks.setButtonStyles" data-wp-on-window--resize="callbacks.setButtonStyles" src="https://files.tecnoblog.net/wp-content/uploads/2026/02/recurso-mini-capsula-presente-em-certos-smartphones-da-realme.png" alt="Recurso Mini Cápsula, presente em certos smartphones da Realme" /><button
+			
+			type="button"
+			aria-haspopup="dialog"
+			aria-label="Ampliar"
+			data-wp-init="callbacks.initTriggerButton"
+			data-wp-on--click="actions.showLightbox"
+			data-wp-style--right="state.imageButtonRight"
+			data-wp-style--top="state.imageButtonTop"
+		>			<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 12 12">				<path fill="#fff" d="M2 0a2 2 0 0 0-2 2v2h1.5V2a.5.5 0 0 1 .5-.5h2V0H2Zm2 10.5H2a.5.5 0 0 1-.5-.5V8H0v2a2 2 0 0 0 2 2h2v-1.5ZM8 12v-1.5h2a.5.5 0 0 0 .5-.5V8H12v2a2 2 0 0 1-2 2H8Zm2-12a2 2 0 0 1 2 2v2h-1.5V2a.5.5 0 0 0-.5-.5H8V0h2Z" />			</svg>		</button><figcaption >Recurso Mini Cápsula, presente em certos smartphones da Realme (Imagem: Reprodução/Realme)</figcaption></figure><h2  >Quais são as vantagens da Dynamic Island?</h2><p>A Dynamic Island tem diversas vantagens, principalmente se comparada ao notch tradicional de iPhones mais antigos. Dentre os principais benefícios, estão:</p><ul ><li><strong>Habilitar recursos interativos no iPhone:</strong> a Ilha Dinâmica oferece novos recursos dinâmicos ao iPhone, com a exibição de alertas e notificações, além de funcionar como atalho para controle de ferramentas.</li><li><strong>Facilitar a visualização de atividades ao vivo:</strong> a Dynamic Island é capaz de exibir atividades ao vivo sem interromper demais atividades do usuário.</li><li><strong>Suporte a diversas aplicações:</strong> o recurso é compatível com diversos apps que rodam no iOS.</li><li><strong>Aproveitamento de espaço do recorte:</strong> trata-se de uma inovação para uma área que antes era destinada somente para abrigar o Face ID e a câmera frontal.</li></ul><h2  >Quais são as desvantagens da Dynamic Island?</h2><p>A Ilha Dinâmica de iPhones também apresenta desvantagens, como limitações de suporte. As principais desvantagens incluem:</p><ul ><li><strong>Compatibilidade limitada:</strong> a Dynamic Island só está disponível para determinados iPhones e certas versões do iOS.</li><li><strong>Sujeira e marca de dedos no recorte:</strong> devido aos recursos interativos com toque, a área que abriga o Face ID e a câmera frontal tende a ficar mais sujas e com marcas de dedos.</li><li><strong>Exibição dinâmica só funciona com tela desbloqueada:</strong> a Ilha Dinâmica funciona apenas quando o iPhone está desbloqueado.</li></ul><h2  >Qual é a diferença entre Dynamic Island e o notch padrão?</h2><p>A Dynamic Island usa um espaço menor que o notch de smartphone tradicional, devido ao recorte em formato de pílula recortado na tela. E além de alocar câmera frontal e Face ID, o recurso traz funcionalidades dinâmicas com o uso de pixels ao redor da área, além de permitir comandos touch screen.</p><p>Já o tradicional <a href="https://tecnoblog.net/responde/notch-o-que-e-lista-celulares/" type="link" >notch de smartphone</a> costuma ter apenas a função de alocar sensores e a câmera de selfie, além de ocupar uma área bem maior no topo da tela.</p><p><a href="https://tecnoblog.net/responde/o-que-e-dynamic-island-veja-como-funciona-a-area-dinamica-de-iphones/">O que é Dynamic Island? Veja como funciona a área dinâmica de iPhones</a></p>
+
+<p><em>Fonte original: <a href="https://tecnoblog.net/responde/o-que-e-dynamic-island-veja-como-funciona-a-area-dinamica-de-iphones/" target="_blank" rel="noopener">GON</a></em></p>
+                    </div>
+
+                    <!-- TAGS -->
+                    <div class="article-tags">
+                        <a href="index.html#politica" class="article-tag">GON</a>
+                        <a href="index.html#politica" class="article-tag">politica</a>
+                    </div>
+
+                    <!-- SHARE BOTTOM -->
+                    <div class="article-meta" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: var(--sp-6);">
+                        <div class="article-share" style="margin-left: 0;">
+                            <span>Compartilhar esta matéria:</span>
+                            <button class="share-btn share-btn--whatsapp" data-share="whatsapp"><i class="fab fa-whatsapp"></i></button>
+                            <button class="share-btn share-btn--facebook" data-share="facebook"><i class="fab fa-facebook-f"></i></button>
+                            <button class="share-btn share-btn--twitter" data-share="twitter"><i class="fab fa-x-twitter"></i></button>
+                            <button class="share-btn share-btn--telegram" data-share="telegram"><i class="fab fa-telegram"></i></button>
+                            <button class="share-btn share-btn--copy" data-share="copy"><i class="fas fa-link"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- RELATED -->
+                    <section class="related">
+                        <h3>Leia também</h3>
+                        <div class="card-grid card-grid--3">
+                            <article class="card">
+                                <a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="card__link">
+                                    <div class="card__img"><img src="https://static6.odiariodemogi.net.br/wp-content/uploads/2026/02/Rabada-com-agriao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Como preparar rabada: 5 receitas simples para o dia a dia</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="card__link">
+                                    <div class="card__img"><img src="https://static3.odiariodemogi.net.br/wp-content/uploads/2025/06/image-3.png" alt="" loading="lazy"><span class="tag tag--politics">Política</span></div>
+                                    <div class="card__body"><h3>DER ativa novo radar na Mogi-Guararema; veja local</h3></div>
+                                </a>
+                            </article>
+                            <article class="card">
+                                <a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="card__link">
+                                    <div class="card__img"><img src="https://static5.odiariodemogi.net.br/wp-content/uploads/2026/02/Feng-shui-ano-do-cavalo-decoracao-1024x683-1.jpg" alt="" loading="lazy"><span class="tag tag--tech">Tecnologia</span></div>
+                                    <div class="card__body"><h3>Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</h3></div>
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+                </article>
+
+                <!-- SIDEBAR -->
+                <aside class="sidebar" aria-label="Conteúdo complementar">
+                    <div class="widget widget--trending">
+                        <h3 class="widget__title"><i class="fas fa-fire-flame-curved"></i> Mais Lidas</h3>
+                        <ol class="trending">
+                            <li class="trending__item"><span class="trending__rank">1</span><a href="artigos/como-preparar-rabada-5-receitas-simples-para-o-dia-a-dia.html" class="trending__link">Como preparar rabada: 5 receitas simples para o dia a dia</a></li>
+                            <li class="trending__item"><span class="trending__rank">2</span><a href="artigos/der-ativa-novo-radar-na-mogi-guararema-veja-local.html" class="trending__link">DER ativa novo radar na Mogi-Guararema; veja local</a></li>
+                            <li class="trending__item"><span class="trending__rank">3</span><a href="artigos/ano-novo-chines-2026-prepare-a-casa-para-receber-a-energia-do-cavalo-de-fogo.html" class="trending__link">Ano Novo Chinês 2026: prepare a casa para receber a energia do Cavalo de Fogo</a></li>
+                            <li class="trending__item"><span class="trending__rank">4</span><a href="artigos/7-grupos-de-alimentos-que-fazem-bem-para-o-cerebro.html" class="trending__link">7 grupos de alimentos que fazem bem para o cérebro</a></li>
+                            <li class="trending__item"><span class="trending__rank">5</span><a href="artigos/agua-de-coco-emagrece-veja-4-mitos-e-verdade-sobre-o-consumo-da-bebida.html" class="trending__link">Água de coco emagrece? Veja 4 mitos e verdade sobre o consumo da bebida</a></li>
+                        </ol>
+                    </div>
+                    <div class="ad-banner ad-banner--sidebar"><div class="ad-placeholder ad-placeholder--tall"><span>Publicidade</span></div></div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo"><div class="header__logo-mark"><span>NH</span></div><strong>Notícias<span>Hoje</span></strong></a>
+                    <p>Jornalismo sério, imparcial e comprometido com a verdade.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer__nav">
+                    <div class="footer__col"><h4>Editorias</h4><ul><li><a href="../index.html#politica">Política</a></li><li><a href="../index.html#economia">Economia</a></li><li><a href="../index.html#tecnologia">Tecnologia</a></li><li><a href="../index.html#esportes">Esportes</a></li><li><a href="../index.html#cultura">Cultura</a></li><li><a href="../index.html#ciencia">Ciência</a></li></ul></div>
+                    <div class="footer__col"><h4>Portal</h4><ul><li><a href="../sobre.html">Sobre o NH</a></li><li><a href="../expediente.html">Expediente</a></li><li><a href="../privacidade.html">Privacidade</a></li><li><a href="../termos.html">Termos de Uso</a></li><li><a href="../etica.html">Código de Ética</a></li><li><a href="../anuncie.html">Anuncie</a></li></ul></div>
+                    <div class="footer__col"><h4>Contato</h4><ul><li><a href="mailto:contato@noticiashoje.com.br"><i class="far fa-envelope"></i> contato@noticiashoje.com.br</a></li><li><a href="tel:+551130000000"><i class="fas fa-phone"></i> (11) 3000-0000</a></li></ul></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 NotíciasHoje. Todos os direitos reservados.</p>
+                <div class="footer__badges"><span><i class="fas fa-shield-halved"></i> Site Seguro</span><span><i class="fas fa-check-circle"></i> Jornalismo Verificado</span></div>
+            </div>
+        </div>
+    </footer>
+
+    <button class="btt" id="btt" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+        <div class="cookie-banner__inner">
+            <div class="cookie-banner__text"><i class="fas fa-cookie-bite"></i><p>Utilizamos cookies. Ao continuar, você concorda com nossa <a href="../privacidade.html">Política de Privacidade</a>.</p></div>
+            <div class="cookie-banner__actions"><button class="cookie-btn cookie-btn--accept" id="cookieAccept">Aceitar</button><button class="cookie-btn cookie-btn--reject" id="cookieReject">Rejeitar</button></div>
+        </div>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

@@ -529,11 +529,7 @@
 
     /* ============ BREAKING NEWS ============ */
     function initBreakingNews() {
-        var items = getStore(KEYS.breaking) || [
-            { text: 'Governo anuncia pacote de investimentos de R$ 120 bilhões em infraestrutura para os próximos 4 anos', link: 'noticia.html' },
-            { text: 'Seleção Brasileira é convocada para as eliminatórias da Copa do Mundo 2026', link: 'noticia.html' },
-            { text: 'Dólar fecha em queda e atinge menor valor em 6 meses: R$ 4,87', link: 'noticia.html' }
-        ];
+        var items = getStore(KEYS.breaking) || [];
 
         function renderBreaking() {
             var container = $('#breakingList');
@@ -705,7 +701,9 @@
             { url: 'https://api.codetabs.com/v1/proxy?quest=', type: 'text' },
             { url: 'https://corsproxy.io/?url=', type: 'text' },
             { url: 'https://api.allorigins.win/raw?url=', type: 'text' },
-            { url: 'https://api.allorigins.win/get?url=', type: 'json' }
+            { url: 'https://api.allorigins.win/get?url=', type: 'json' },
+            { url: 'https://api.codetabs.com/v1/proxy?quest=', type: 'text' },
+            { url: 'https://corsproxy.org/?url=', type: 'text' }
         ];
         var importResults = [];
         var scrapedArticle = null;
@@ -719,8 +717,11 @@
                 }
                 var p = PROXIES[idx++];
                 var fetchUrl = p.url + encodeURIComponent(url);
-                return fetch(fetchUrl, { signal: AbortSignal.timeout ? AbortSignal.timeout(12000) : undefined })
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function() { controller.abort(); }, 20000);
+                return fetch(fetchUrl, { signal: controller.signal })
                     .then(function(r) {
+                        clearTimeout(timeoutId);
                         if (!r.ok) throw new Error('HTTP ' + r.status);
                         if (p.type === 'json') {
                             return r.json().then(function(data) {
@@ -735,6 +736,7 @@
                         return content;
                     })
                     .catch(function(err) {
+                        clearTimeout(timeoutId);
                         console.warn('Proxy ' + idx + ' falhou:', err.message);
                         return tryProxy();
                     });
@@ -747,11 +749,57 @@
             $('#importLoading').style.display = show ? 'block' : 'none';
         }
 
+        /* ---- Parse Portuguese dates (e.g. "Ter, 17 Fev 2026 14:00:00 +0000") ---- */
+        function parseDateBR(dateStr) {
+            if (!dateStr) return '';
+            // Try native Date first
+            var d = new Date(dateStr);
+            if (!isNaN(d.getTime())) return d.toISOString().slice(0, 16);
+            // Replace Portuguese month abbreviations
+            var ptMonths = { 'jan': 'Jan', 'fev': 'Feb', 'mar': 'Mar', 'abr': 'Apr', 'mai': 'May', 'jun': 'Jun',
+                             'jul': 'Jul', 'ago': 'Aug', 'set': 'Sep', 'out': 'Oct', 'nov': 'Nov', 'dez': 'Dec' };
+            var ptDays = { 'seg': 'Mon', 'ter': 'Tue', 'qua': 'Wed', 'qui': 'Thu', 'sex': 'Fri', 'sab': 'Sat', 'sáb': 'Sat', 'dom': 'Sun' };
+            var fixed = dateStr;
+            Object.keys(ptDays).forEach(function(k) {
+                fixed = fixed.replace(new RegExp(k, 'gi'), ptDays[k]);
+            });
+            Object.keys(ptMonths).forEach(function(k) {
+                fixed = fixed.replace(new RegExp(k, 'gi'), ptMonths[k]);
+            });
+            d = new Date(fixed);
+            if (!isNaN(d.getTime())) return d.toISOString().slice(0, 16);
+            return new Date().toISOString().slice(0, 16);
+        }
+
+        /* ---- Get namespace-aware text content ---- */
+        function getNSText(parent, ns, localName) {
+            var els = parent.getElementsByTagNameNS(ns, localName);
+            if (els && els[0]) return (els[0].textContent || '').trim();
+            return '';
+        }
+
         /* ---- Parse RSS/Atom XML ---- */
         function parseRSS(xmlString) {
+            // Fix common XML issues: strip invalid chars, fix unclosed tags
+            xmlString = xmlString.replace(/&(?!amp;|lt;|gt;|apos;|quot;|#\d+;|#x[\da-f]+;)/gi, '&amp;');
+
             var parser = new DOMParser();
             var doc = parser.parseFromString(xmlString, 'text/xml');
             var items = [];
+
+            // Check for parse errors
+            var parseErr = doc.querySelector('parsererror');
+            if (parseErr) {
+                console.warn('XML parse error, tentando como HTML...');
+                // Try parsing as HTML which is more forgiving
+                doc = parser.parseFromString(xmlString, 'text/html');
+            }
+
+            // Namespace URIs
+            var NS_DC = 'http://purl.org/dc/elements/1.1/';
+            var NS_CONTENT = 'http://purl.org/rss/1.0/modules/content/';
+            var NS_MEDIA = 'http://search.yahoo.com/mrss/';
+            var NS_ATOM = 'http://www.w3.org/2005/Atom';
 
             // Try RSS 2.0 <item>
             var rssItems = doc.querySelectorAll('item');
@@ -759,68 +807,108 @@
                 rssItems.forEach(function(item) {
                     var title = getTagText(item, 'title');
                     var link = getTagText(item, 'link');
+                    // Fix: some feeds have <link> with just whitespace and real URL is in text node
+                    if (link) link = link.replace(/\s+/g, '');
+
                     var desc = getTagText(item, 'description');
                     var pubDate = getTagText(item, 'pubDate');
-                    var author = getTagText(item, 'dc\\:creator') || getTagText(item, 'author');
+
+                    // Use namespace-aware getters for namespaced elements
+                    var author = getNSText(item, NS_DC, 'creator') || getTagText(item, 'author');
                     var category = getTagText(item, 'category');
 
-                    // Try to find image
+                    // Try atom:subtitle (used by G1/GE)
+                    var atomSubtitle = getNSText(item, NS_ATOM, 'subtitle');
+
+                    // Get content:encoded via namespace
+                    var contentEncoded = getNSText(item, NS_CONTENT, 'encoded');
+
+                    // Try to find image — multiple strategies
                     var image = '';
+
+                    // 1. enclosure with image type
                     var enclosure = item.querySelector('enclosure[type^="image"]');
                     if (enclosure) image = enclosure.getAttribute('url') || '';
+
+                    // 2. enclosure without type (sometimes has image URL)
                     if (!image) {
-                        var mediaThumbnail = item.querySelector('thumbnail') || item.getElementsByTagNameNS('http://search.yahoo.com/mrss/', 'thumbnail')[0];
+                        var enclosureAny = item.querySelector('enclosure');
+                        if (enclosureAny) {
+                            var encUrl = enclosureAny.getAttribute('url') || '';
+                            if (/\.(jpg|jpeg|png|gif|webp|svg)/i.test(encUrl)) image = encUrl;
+                        }
+                    }
+
+                    // 3. media:thumbnail (namespace-aware)
+                    if (!image) {
+                        var mediaThumbnail = item.getElementsByTagNameNS(NS_MEDIA, 'thumbnail')[0];
                         if (mediaThumbnail) image = mediaThumbnail.getAttribute('url') || '';
                     }
+
+                    // 4. media:content (namespace-aware) — used by G1, GE, Estadão
                     if (!image) {
-                        var mediaContent = item.getElementsByTagNameNS('http://search.yahoo.com/mrss/', 'content')[0];
-                        if (mediaContent) image = mediaContent.getAttribute('url') || '';
-                    }
-                    if (!image) {
-                        // Try content:encoded
-                        var contentEncoded = getTagText(item, 'content\\:encoded') || '';
-                        if (!contentEncoded) {
-                            var ceNodes = item.getElementsByTagNameNS('http://purl.org/rss/1.0/modules/content/', 'encoded');
-                            if (ceNodes && ceNodes[0]) contentEncoded = ceNodes[0].textContent || '';
+                        var mediaContents = item.getElementsByTagNameNS(NS_MEDIA, 'content');
+                        for (var mi = 0; mi < mediaContents.length; mi++) {
+                            var mc = mediaContents[mi];
+                            var mcMedium = mc.getAttribute('medium') || '';
+                            var mcType = mc.getAttribute('type') || '';
+                            var mcUrl = mc.getAttribute('url') || '';
+                            if (mcMedium === 'image' || mcType.indexOf('image') > -1 || /\.(jpg|jpeg|png|gif|webp)/i.test(mcUrl)) {
+                                image = mcUrl;
+                                break;
+                            }
                         }
+                        // If no image-specific media:content, take the first one
+                        if (!image && mediaContents.length > 0) {
+                            image = mediaContents[0].getAttribute('url') || '';
+                        }
+                    }
+
+                    // 5. Image from content:encoded HTML
+                    if (!image && contentEncoded) {
                         var ceImgMatch = contentEncoded.match(/<img[^>]+src=["']([^"']+)["']/i);
                         if (ceImgMatch) image = ceImgMatch[1];
                     }
-                    if (!image) {
-                        // Extract first image from description HTML
-                        var imgMatch = (desc || '').match(/<img[^>]+src=["']([^"']+)["']/i);
-                        if (imgMatch) image = imgMatch[1];
+
+                    // 6. Image from description HTML
+                    if (!image && desc) {
+                        var descImgMatch = desc.match(/<img[^>]+src=["']([^"']+)["']/i);
+                        if (descImgMatch) image = descImgMatch[1];
                     }
 
                     // Extract full content from content:encoded for article body
                     var fullContent = '';
-                    var ceForContent = getTagText(item, 'content\\:encoded') || '';
-                    if (!ceForContent) {
-                        var ceNodes2 = item.getElementsByTagNameNS('http://purl.org/rss/1.0/modules/content/', 'encoded');
-                        if (ceNodes2 && ceNodes2[0]) ceForContent = ceNodes2[0].textContent || '';
-                    }
-                    if (ceForContent) {
-                        // Clean up: keep paragraphs, headings, lists, blockquotes
-                        fullContent = ceForContent
+                    if (contentEncoded) {
+                        fullContent = contentEncoded
                             .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, '')
                             .replace(/<style[^>]*>[\s\S]*?<\/style>/gi, '')
                             .replace(/<iframe[^>]*>[\s\S]*?<\/iframe>/gi, '')
                             .replace(/class="[^"]*"/gi, '')
                             .replace(/style="[^"]*"/gi, '')
-                            .replace(/id="[^"]*"/gi, '');
+                            .replace(/id="[^"]*"/gi, '')
+                            .replace(/srcset="[^"]*"/gi, '')
+                            .replace(/sizes="[^"]*"/gi, '')
+                            .replace(/loading="[^"]*"/gi, '')
+                            .replace(/decoding="[^"]*"/gi, '')
+                            .replace(/fetchpriority="[^"]*"/gi, '');
                     }
 
-                    // Clean HTML from description
-                    var cleanDesc = desc ? desc.replace(/<[^>]+>/g, '').trim() : '';
+                    // Clean HTML from description, prefer atom:subtitle for Globo feeds
+                    var cleanDesc = '';
+                    if (atomSubtitle) {
+                        cleanDesc = atomSubtitle;
+                    } else if (desc) {
+                        cleanDesc = desc.replace(/<[^>]+>/g, '').trim();
+                    }
 
                     if (title) {
                         items.push({
                             title: title,
                             link: link,
-                            description: cleanDesc.substring(0, 300),
+                            description: cleanDesc.substring(0, 500),
                             fullContent: fullContent,
                             image: image,
-                            date: pubDate ? new Date(pubDate).toISOString().slice(0, 16) : '',
+                            date: parseDateBR(pubDate),
                             author: author,
                             category: category,
                             source: ''
@@ -844,8 +932,12 @@
                     if (catEl) category = catEl.getAttribute('term') || catEl.textContent || '';
 
                     var image = '';
-                    var mediaThumbnail = entry.getElementsByTagNameNS('http://search.yahoo.com/mrss/', 'thumbnail')[0];
+                    var mediaThumbnail = entry.getElementsByTagNameNS(NS_MEDIA, 'thumbnail')[0];
                     if (mediaThumbnail) image = mediaThumbnail.getAttribute('url') || '';
+                    if (!image) {
+                        var mediaContent = entry.getElementsByTagNameNS(NS_MEDIA, 'content')[0];
+                        if (mediaContent) image = mediaContent.getAttribute('url') || '';
+                    }
                     if (!image) {
                         var imgMatch = (summary || '').match(/<img[^>]+src=["']([^"']+)["']/i);
                         if (imgMatch) image = imgMatch[1];
@@ -857,9 +949,9 @@
                         items.push({
                             title: title,
                             link: link,
-                            description: cleanDesc.substring(0, 300),
+                            description: cleanDesc.substring(0, 500),
                             image: image,
-                            date: published ? new Date(published).toISOString().slice(0, 16) : '',
+                            date: parseDateBR(published),
                             author: author,
                             category: category,
                             source: ''
@@ -876,9 +968,14 @@
         }
 
         function getTagText(parent, tagName) {
-            var el = parent.querySelector(tagName);
-            if (!el) return '';
-            return (el.textContent || '').trim();
+            try {
+                var el = parent.querySelector(tagName);
+                if (!el) return '';
+                return (el.textContent || '').trim();
+            } catch(e) {
+                // querySelector may fail with namespaced selectors like dc:creator
+                return '';
+            }
         }
 
         /* ---- Parse OG tags from HTML ---- */
@@ -1377,10 +1474,11 @@
         var catLabel = catLabels[cat] || cat;
         var catClass = catTagClasses[cat] || 'tag--politics';
         var d = article.date ? new Date(article.date) : new Date();
+        if (isNaN(d.getTime())) d = new Date();
         var dateFormatted = d.toLocaleDateString('pt-BR', { day: 'numeric', month: 'short', year: 'numeric' }) + ' às ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
         var dateISO = d.toISOString();
         var tagsHtml = (article.tags || []).map(function(t) {
-            return '                        <a href="index.html#' + cat + '" class="article-tag">' + escHtml(t) + '</a>';
+            return '                        <a href="../index.html#' + cat + '" class="article-tag">' + escHtml(t) + '</a>';
         }).join('\n');
 
         // Related articles
@@ -1400,7 +1498,7 @@
                 '                            </article>';
         }).join('\n');
 
-        return '<!DOCTYPE html>\n' +
+        var html = '<!DOCTYPE html>\n' +
 '<html lang="pt-BR" data-theme="light">\n' +
 '<head>\n' +
 '    <meta charset="UTF-8">\n' +
@@ -1426,7 +1524,7 @@
 '    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n' +
 '    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Serif+4:wght@600;700;800&display=swap" rel="stylesheet">\n' +
 '    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">\n' +
-'    <link rel="stylesheet" href="css/style.css">\n' +
+'    <link rel="stylesheet" href="../css/style.css">\n' +
 '    <script type="application/ld+json">\n' +
 '    {\n' +
 '        "@context": "https://schema.org",\n' +
@@ -1597,9 +1695,19 @@
 '        </div>\n' +
 '    </div>\n' +
 '\n' +
-'    <script src="js/main.js"></script>\n' +
+'    <script src="../js/main.js"></script>\n' +
 '</body>\n' +
 '</html>';
+
+        // Post-process: fix all internal links to use ../ since pages go in artigos/
+        return html
+            .replace(/href="index\.html/g, 'href="../index.html')
+            .replace(/href="sobre\.html/g, 'href="../sobre.html')
+            .replace(/href="privacidade\.html/g, 'href="../privacidade.html')
+            .replace(/href="termos\.html/g, 'href="../termos.html')
+            .replace(/href="etica\.html/g, 'href="../etica.html')
+            .replace(/href="anuncie\.html/g, 'href="../anuncie.html')
+            .replace(/href="expediente\.html/g, 'href="../expediente.html');
     }
 
     function initGeneratePages() {
