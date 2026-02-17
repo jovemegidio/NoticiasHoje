@@ -490,7 +490,7 @@
             }
 
             // ---- CATEGORY SECTIONS ----
-            var categoryIds = ['politica', 'economia', 'tecnologia', 'saude', 'esportes', 'cultura', 'mundo', 'ciencia'];
+            var categoryIds = ['politica', 'economia', 'tecnologia', 'saude', 'esportes', 'cultura', 'mundo', 'ciencia', 'educacao', 'opiniao'];
             categoryIds.forEach(function(catId) {
                 var section = document.getElementById(catId);
                 if (!section) return;
